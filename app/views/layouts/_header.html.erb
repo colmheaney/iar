@@ -4,12 +4,15 @@
           <%= link_to "iar", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "About Us", about_path %></li>
-				<li><%= link_to "Contact Us", contact_path %></li>
-				<li><%= link_to "Publications", '#' %></li>
-				<li><%= link_to "Blog", '#' %></li>
-				<li><%= link_to "News/Events", '#' %></li>
+      				<li><%= link_to "Home", root_path %></li>
+      				<li><%= link_to "About Us", about_path %></li>
+      				<li><%= link_to "Contact Us", contact_path %></li>
+      				<li><%= link_to "Publications", '#' %></li>
+      				<li><%= link_to "Blog", '#' %></li>
+      				<li><%= link_to "News/Events", '#' %></li>
+              <% if signed_in? %>
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              <% end %>
             </ul>
           </nav>
         </div>
