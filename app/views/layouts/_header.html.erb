@@ -9,7 +9,7 @@
       				<li><%= link_to "Contact Us", contact_path %></li>
       				<li><%= link_to "Publications", '#' %></li>
       				<li><%= link_to "Blog", '#' %></li>
-      				<li><%= link_to "News/Events", '#' %></li>
+      				<li><%= link_to "News/Events", events_path %></li>
               <% if signed_in? %>
                 <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
               <% end %>
