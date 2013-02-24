@@ -3,7 +3,6 @@ Iar::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
   
-  #match '/events',  to: 'events#index'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/signin',  to: 'sessions#new'

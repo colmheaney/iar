@@ -1,2 +1,10 @@
 <%= provide(:title, 'News/Events') %>
 <h1>News/Events</h1>
+
+<%= will_paginate %>	
+
+<ul class="events">
+	<%= render @events %>
+</ul>
+
+<%= will_paginate %>

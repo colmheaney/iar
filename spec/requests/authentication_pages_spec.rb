@@ -45,4 +45,41 @@ describe "AuthenticationPages" do
 			end
 		end
 	end
+
+	describe "authorisation" do
+		
+		describe "for non-signed in users" do
+			
+			let(:user) { FactoryGirl.create(:user) }
+			let(:event) { FactoryGirl.create(:event) }
+
+			describe "in the users controller" do
+				
+				# describe "visiting the edit page" do
+			 #        before { visit edit_event_path(event) }
+			 #        it { should have_selector('title', text: full_title('Sign in')) }
+				# end
+
+				describe "submitting to the update action" do
+					before { put event_path(event) }
+					specify { response.should redirect_to(signin_path)}
+				end
+			end
+
+			describe "when attempting to visit a protected page" do
+				before do
+					visit edit_event_path(event)
+					fill_in	"Email", with: user.email
+					fill_in "Password", with: user.password
+					click_button "Sign in"
+				end
+
+				describe "after signing in" do
+					it "should render the correct protected page" do
+						page.should have_selector('title', text: 'Update event')
+					end
+				end
+			end
+		end
+	end
 end
