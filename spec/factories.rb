@@ -16,4 +16,9 @@ FactoryGirl.define do
 		location "a hole somewhere"
 		date "2011"
 	end
+
+	factory :publication do
+		title "A publication title"
+		description "A publication description"
+	end
 end

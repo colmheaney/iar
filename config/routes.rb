@@ -1,13 +1,12 @@
 Iar::Application.routes.draw do
-  get "publications/new"
-
-  get "publications/editindex"
-
-  get "publications/show"
-
   root to: 'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
+  resources :publications do
+    member do
+      get :download
+    end
+  end
   
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

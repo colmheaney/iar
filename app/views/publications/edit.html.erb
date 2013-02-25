@@ -1,5 +1,5 @@
-<%= provide(:title, "Add new Publication") %>
-<h1>Add new Publication</h1>
+<%= provide(:title, "Update publication") %>
+<h1>Update publication</h1>
 
 <div class="row">
 	<div class="span6 offset3">
@@ -15,9 +15,9 @@
 			<%= f.file_field :image %>
 
 			<%= f.label :file, "Choose File:" %>
-			<%= f.file_field :file %>			
-			
-			<%= f.submit "Add new publication", class: "btn btn-large btn-primary" %>
+			<%= f.file_field :file %>	
+
+			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
 </div>
