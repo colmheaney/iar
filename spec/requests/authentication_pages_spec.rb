@@ -53,7 +53,7 @@ describe "AuthenticationPages" do
 			let(:user) { FactoryGirl.create(:user) }
 			let(:event) { FactoryGirl.create(:event) }
 
-			describe "in the users controller" do
+			describe "in the events controller" do
 				
 				# describe "visiting the edit page" do
 			 #        before { visit edit_event_path(event) }
@@ -62,6 +62,16 @@ describe "AuthenticationPages" do
 
 				describe "submitting to the update action" do
 					before { put event_path(event) }
+					specify { response.should redirect_to(signin_path)}
+				end
+
+				describe "submitting to the create action" do
+					before { post events_path }
+					specify { response.should redirect_to(signin_path)}
+				end
+
+				describe "submitting to the destroy action" do
+					before { delete event_path(FactoryGirl.create(:event)) }
 					specify { response.should redirect_to(signin_path)}
 				end
 			end

@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	before_filter :signed_in_user, only: [:edit, :update, :new, :create]
+	before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
 	
 	def index
 		@events = Event.paginate(page: params[:page], per_page: 10)		
@@ -37,12 +37,9 @@ class EventsController < ApplicationController
 		end
 	end
 
-	private
-
-		def signed_in_user
-			unless signed_in?
-				store_location
-				redirect_to signin_path, notice: "You must sign in to view that page."
-			end
-		end	
+	def destroy
+	    Event.find(params[:id]).destroy
+	    flash[:success] = "Event deleted."
+	    redirect_to events_path				
+	end
 end

@@ -1,4 +1,10 @@
 Iar::Application.routes.draw do
+  get "publications/new"
+
+  get "publications/editindex"
+
+  get "publications/show"
+
   root to: 'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
