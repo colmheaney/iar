@@ -5,6 +5,7 @@
     <th>Title</th>
     <th>Body</th>
     <th>Published date</th>
+    <th>Categories</th>
     <th>User</th>
     <th></th>
     <th></th>
@@ -16,14 +17,20 @@
     <td><%= post.title %></td>
     <td><%= post.body %></td>
     <td><%= post.published_date %></td>
-    <td><%= post.user_id %></td>
+    <% post.categories.each do |cat| %>
+    <td><%= link_to cat.name, posts_path(:cat => cat.id) %></td> 
+    <% end %>
+    <td><%= link_to post.user.name, posts_path(:user => post.user.id) %></td>
     <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user?(post.user) %>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Post', new_post_path %>
+<% if signed_in? %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %> 

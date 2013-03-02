@@ -1,5 +1,5 @@
 <li>
-	<%= link_to publication.title, publication %>
+	<%= publication.title %>
 	<%= image_tag publication.image_url(:thumb).to_s %>
 	| <%= link_to "download", download_publication_path(publication) %>
 	<% if signed_in? %>
