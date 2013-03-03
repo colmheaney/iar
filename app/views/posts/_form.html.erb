@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :published_date %><br />
-    <%= f.date_select :published_date %>
+    <%= f.date_select(:published_date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span2 date-select"}) %>
   </div>
   <div class="field">
 

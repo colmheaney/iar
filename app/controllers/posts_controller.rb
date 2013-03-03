@@ -33,14 +33,21 @@ class PostsController < ApplicationController
   end
 
   def update
-    params[:post][:category_ids] ||= []
+    params[:post][:category_ids] ||= []    
     @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      flash[:success] = "Post Updated"
+      redirect_to @post
+    else
+      render 'edit'
+    end    
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    end
+      Post.find(params[:id]).destroy
+      flash[:success] = "Post deleted."
+      redirect_to posts_path 
+  end
 
     private
 

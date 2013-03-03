@@ -15,6 +15,7 @@ group :development, :test do
   gem 'guard-rspec', '1.2.1'  
   gem 'guard-spork', '1.4.2'
   gem 'spork', '0.9.2'  
+  gem 'simplecov', :require => false
 end
 
 group :development do

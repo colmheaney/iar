@@ -111,4 +111,20 @@ describe "EventPages" do
 			end
 		end
 	end
+
+	describe "deleting an event" do
+		before { FactoryGirl.create(:event) }
+		let(:user) { FactoryGirl.create(:user) }
+
+		describe "as signed in user" do
+			before do 
+				sign_in user
+				visit events_path
+			end
+			
+			it "should delete an event" do
+				expect { click_link 'delete' }.to change(Event, :count).by(-1)
+			end
+		end		
+	end
 end

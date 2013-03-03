@@ -27,9 +27,11 @@ describe "PublicationPages" do
 			before do
 				fill_in "Title", with: "Example title"
 				fill_in	"Description", with: "Example description"
+				attach_file "Choose Image:", "/home/ubuntu/rails_projects/iar/spec/fixtures/images/example.jpg"
+				attach_file "Choose File:", "/home/ubuntu/rails_projects/iar/spec/fixtures/files/example.txt"
 			end
 
-			it "should create an publication" do
+			it "should create a publication" do
 				expect{ click_button submit }.to change(Publication, :count).by(1)
 			end
 		end
@@ -55,7 +57,7 @@ describe "PublicationPages" do
 				click_button "Save changes" 
 			end
 
-			#it { should have_content('error') }
+			it { should have_content('error') }
 		end
 
 		describe "with valid information" do
@@ -75,8 +77,6 @@ describe "PublicationPages" do
 	end
 
 	describe "index" do
-		
-		let(:publication) { FactoryGirl.create(:publication) }
 
 		before(:each) do
 			visit publications_path
@@ -99,4 +99,33 @@ describe "PublicationPages" do
 			end
 		end
 	end
+
+	describe "delete publication" do
+		
+		before { FactoryGirl.create(:publication) }
+		let(:user) { FactoryGirl.create(:user) }
+
+		describe "as signed in user" do
+			before do 
+				sign_in user
+				visit publications_path
+			end
+			
+			it "should delete a publication" do
+				expect { click_link 'delete' }.to change(Publication, :count).by(-1)
+			end
+		end
+	end
+
+	# describe "download publication" do
+	# 	before do 
+	# 		FactoryGirl.create(:publication) 
+	# 		visit publications_path
+	# 		click_link 'download'
+	# 	end
+
+	# 	it "should generate download dialog" do
+	# 		expect { response }.to be_success
+	# 	end
+	# end
 end
