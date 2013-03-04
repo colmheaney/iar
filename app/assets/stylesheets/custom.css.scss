@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 /* mixins, variables, etc. */
 
@@ -17,7 +18,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 section {
@@ -64,6 +65,11 @@ p {
 
 
 /* header */
+.top {
+  padding-top:10px;
+  padding-bottom:10px;
+  background: white;
+}
 
 #logo {
   float: left;
@@ -79,6 +85,12 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+/* navbar */
+
+.navbar-inverse .navbar-inner {
+    margin-bottom: 30px;
 }
 
 /* footer */

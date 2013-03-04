@@ -1,12 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="header">
-      <%= link_to "iar", root_path, id: "logo" %>
-  </div>
-
+<div class="container top">
+  <img alt="IAR" src="/assets/LogoSmaller.png">
+</div>
+<header class="navbar navbar-inverse navbar-static-top">
   <div class="navbar-inner">
     <div class="container">
       <nav>
-        <ul class="nav pull-right">
+        <ul class="nav">
 
           <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
