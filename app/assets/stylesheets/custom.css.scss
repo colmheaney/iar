@@ -15,6 +15,8 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
+  background-color: #1B1B1B;
+  border-color: #252525;  
 }
 
 body {
@@ -71,6 +73,38 @@ p {
   background: white;
 }
 
+.navbar-inverse .nav {
+  li {
+    a {
+      color: white;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);      
+      &:hover {
+      text-decoration: underline;
+      }    
+    }
+  }
+}
+
+.navbar-inner {
+  li {
+    line-height: 25px;
+    font-size: 20px;
+  }
+}
+
+.banner {
+  background: url("/assets/banner.png") repeat scroll center center;
+  height:300px;
+  margin-top: -2px;
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.banner .banner-content {
+  padding-top:10px;
+  color: white;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -87,10 +121,20 @@ p {
   }
 }
 
-/* navbar */
 
-.navbar-inverse .navbar-inner {
-    margin-bottom: 30px;
+/* main home */
+
+.main-content {
+  margin-top: 20px;
+  h2 {
+    text-align: left;
+  }
+  h4 {
+    color: #999999;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+  }
 }
 
 /* footer */
@@ -98,16 +142,15 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
   a {
-    color: $gray;
+    color: white;
     &:hover { 
-      color: $grayDarker;
+      color: white;
     }
   }  
   small { 
     float: left; 
+    color: white;
   }
   ul {
     float: right;
