@@ -1,0 +1,9 @@
+<div class="blog-latest">
+	<h4> <%= blog_excerpt.title %></h4>
+	<p> <%= raw(truncate(blog_excerpt.body, :length => 150, :omission => "... #{link_to "(read more)", polymorphic_path(blog_excerpt)}")) %> </p>	
+	<span class="timestamp">
+		Posted <%= time_ago_in_words(blog_excerpt.created_at) %> ago by <%= link_to blog_excerpt.user.name, posts_path(:user => blog_excerpt.user.id) %>
+	</span>
+</div>
+
+

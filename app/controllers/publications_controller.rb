@@ -47,4 +47,5 @@ class PublicationsController < ApplicationController
 		 
 		send_file uploader.file.path
 	end
+
 end

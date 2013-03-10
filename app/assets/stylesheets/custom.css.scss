@@ -37,6 +37,7 @@ textarea {
   }
 }
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,12 +65,16 @@ p {
   line-height: 1.7em;
 }
 
+li {
+  line-height: 1.7em;  
+}
 
 /* header */
 .top {
   padding-top:10px;
   padding-bottom:10px;
   background: white;
+  position: relative;
 }
 
 .navbar-inner {
@@ -78,6 +83,11 @@ p {
     font-size: 20px;
   }
 }
+
+#search {
+  margin-top: 8px;
+}
+
 
 .banner {
   background: url("/assets/banner.png") repeat scroll center center;
@@ -132,6 +142,26 @@ p {
   }
 }
 
+/* headsocial */
+
+#headsocial {
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
+}
+    #headsocial li {
+        display: inline;
+    }
+
+    #headsocial img {
+        float: left;
+        margin-left: 23px;
+        -webkit-transition:-webkit-border-radius .2s;
+        -moz-transition: -moz-border-radius .2s;
+        transition: -border-radius .2s;
+    }
+
+
 
 /* main home */
 
@@ -148,14 +178,27 @@ p {
   }
 }
 
+#schools-image {
+  margin-bottom:30px;
+}
+
 /* sidebar */
+
+.sidebar h2 {
+  text-align: left;
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+#second {
+  margin-top: 40px;
+}
 
 .blog-latest {
   background-color: #D9EDF7;
   border: 1px solid #BCE8F1;  
   color: #3A87AD; 
   border-radius: 4px 4px 4px 4px;
-  margin-top: 30px;  
   margin-bottom: 18px;
   padding: 8px 35px 8px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  
@@ -173,12 +216,11 @@ p {
   }
 }
 
-.news-latest {
+.event-latest {
   background-color: #DFF0D8;
   border: 1px solid #D6E9C6;  
   color: #468847; 
   border-radius: 4px 4px 4px 4px;
-  margin-top: 30px;  
   margin-bottom: 18px;
   padding: 8px 35px 8px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  

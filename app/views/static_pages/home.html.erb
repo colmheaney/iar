@@ -1,37 +1,79 @@
-<div class="row">
-	<div class="span4">
-		
-		<div class="news-latest">
-			<h4>Example Blog post</h4>
-			<p>Lorem ipsum est aliqua proident nostrud amet magna labore adipisicing Duis dolore sit. Lorem ipsum proident velit deserunt voluptate enim velit ullamco do ut culpa ullamco nulla reprehenderit.</p>
-		</div>	
-		<div class="news-latest">
-			<h4>Example Blog post</h4>
-			<p>Lorem ipsum est aliqua proident nostrud amet magna labore adipisicing Duis dolore sit. Lorem ipsum proident velit deserunt voluptate enim velit ullamco do ut culpa ullamco nulla reprehenderit. </p>
-		</div>
+<div class="main">
+	<div class="row">
+		<div class="span4 sidebar" >
 
-		<div class="blog-latest">
-			<h4>Example Blog post</h4>
-			<p>Lorem ipsum est aliqua proident nostrud amet magna labore adipisicing Duis dolore sit. Lorem ipsum proident velit deserunt voluptate enim velit ullamco do ut culpa ullamco nulla reprehenderit. </p>
-		</div>
-		<div class="blog-latest">
-			<h4>Example Blog post</h4>
-			<p>Lorem ipsum est aliqua proident nostrud amet magna labore adipisicing Duis dolore sit. Lorem ipsum proident velit deserunt voluptate enim velit ullamco do ut culpa ullamco nulla reprehenderit. </p>
-		</div>
+			<h2 id="first">Latest News/Events</h2>
+			<%= render partial: 'shared/event_excerpt', collection: @event_excerpts %>
 
-	</div>
-	<div class="span8 main-content">
-		<h2>Heading</h2>
-		<h4>Subheading</h3>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.  Lorem ipsum sed ut dolor consequat sed nisi exercitation exercitation sunt. Lorem ipsum tempor dolor Duis consequat ea labore eu dolor do esse voluptate qui dolor dolor deserunt. </p>
-		<hr />
-		<h2>Heading</h2>
-		<h4>Subheading</h3>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.  Lorem ipsum sed ut dolor consequat sed nisi exercitation exercitation sunt. Lorem ipsum tempor dolor Duis consequat ea labore eu dolor do esse voluptate qui dolor dolor deserunt. </p>
-		<hr />
-		<h2>Heading</h2>
-		<h4>Subheading</h3>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>	
-		<hr />					
+			<h2 id="second">Latest from the Blog</h2>
+			<%= render partial: 'shared/blog_excerpt', collection: @blog_excerpts %>
+
+		</div>
+		<div class="span8 main-content">
+
+		<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active"><a href="#pane1" data-toggle="tab">Schools</a></li>
+		    <li><a href="#pane2" data-toggle="tab">Open Air Museum</a></li>
+		    <li><a href="#pane3" data-toggle="tab">Tab 3</a></li>
+		  </ul>
+		  <div class="tab-content">
+		    <div id="pane1" class="tab-pane active">
+				<h2>Archaeology in the Classroom</h2>
+
+				<div id="schools-image">
+					<img src="/assets/blackfriary-trim.jpg">
+				</div>
+
+				<p>Over the past year we have developed a series of archaeology workshops that complement and integrate with the teaching curriculum. Our workshops can last from one hour to all day, incorporating visual presentations, hands-on interaction with genuine and replica artefacts and assessing the lives of ancient people through careful examination of the material they left behind.</p>
+
+		        <hr />
+
+				<p>Teachers can tailor each workshop to suit the needs of their students.</p>
+
+				<p>Here is a list of the activities we can organise:</p>
+				<ul>
+					<li>Identifying locations for the establishment of settlements using local area maps.</li>
+					<li>Stratigraphy puzzles.</li>
+					<li>What would you look like to an archaeologist in 1,000 years?</li>
+					<li>Using everyday rubbish to examine the lives of individuals.</li>
+					<li>Dissecting ‘poo’ to find out about ancient diet.</li>
+					<li>Artefact recording.</li>
+					<li>Creating timelines in the classroom.</li>
+					<li>Mesolithic cave painting.</li>
+					<li>Learning about the ancient boardgame,  Brandubh.</li>
+					<li>The many uses of flint.</li>
+					<li>Artefact identification and discussion.</li>
+					<li>Designing and making your own coins.</li>
+					<li>Show and tell: students bring in items they consider to be ancient for discussion.</li>
+					<li>How prehistoric pottery was made and decorated.</li>
+				</ul>
+
+		    </div>
+		    <div id="pane2" class="tab-pane">
+		    <h2>Open Air Museum Project</h2>
+
+				<div id="schools-image">
+					<img src="/assets/Newgrange_ireland_750px.jpg">
+				</div>
+
+		      <p> Lorem ipsum cillum ullamco proident irure eiusmod anim sed deserunt ullamco consequat tempor dolor. Lorem ipsum ad ullamco culpa labore Ut ullamco labore nulla esse sint deserunt in. Lorem ipsum reprehenderit eiusmod Ut ea ullamco aute fugiat. Lorem ipsum enim voluptate aliquip mollit veniam in et tempor. Lorem ipsum veniam ullamco sint dolor in cillum dolore quis. </p>
+
+		      <hr />
+
+		      <p>Lorem ipsum incididunt irure exercitation ex cillum nisi officia est nulla officia pariatur Duis veniam dolore. Lorem ipsum sit esse aliqua dolore occaecat esse dolor. </p>
+
+		      <hr />
+
+		      <p>Lorem ipsum incididunt in esse do esse qui magna. Lorem ipsum minim laborum laboris commodo amet aliqua magna dolore exercitation reprehenderit eu elit. </p>
+		    </div>
+		    <div id="pane3" class="tab-pane">
+		      <h2>Pane 3 Content</h2>
+		    </div>
+		  </div><!-- /.tab-content -->
+		</div><!-- /.tabbable -->
+
+		</div>
 	</div>
 </div>
+

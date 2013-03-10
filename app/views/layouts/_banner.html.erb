@@ -1,10 +1,14 @@
 <div class="banner center">
 	<div class="banner-content container">
-		<h1>Read the IAR digital magazine. Issue 4 is out now!</h1>
-		<p><%= link_to "Read Now", '#', class: "btn btn-large btn-primary" %>
+		<% @publication.each do |pub| %>
+		<h1>Read the IAR digital magazine. <%= pub.title %> is out now!</h1>
+		<p><%= link_to "Read Now", download_publication_path(@publication), class: "btn btn-large btn-primary" %>
 		</p>
-		<img class="featured" src="/assets/page_1_thumb_large.jpg">
+		<%= image_tag pub.image_url(:thumb).to_s, class: "featured"%>
 		<img class="background" src="/assets/page_2_thumb_large.jpg">
+		<% end %>		
 	</div>
 </div>
+
+
 	
