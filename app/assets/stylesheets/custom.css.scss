@@ -76,40 +76,41 @@ li {
 
 /* header */
 .top {
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-top:5px;
+  padding-bottom:5px;
   background: white;
   position: relative;
 }
 
 .navbar-inner {
   li {
-    line-height: 25px;
-    font-size: 20px;
+    line-height: 20px;
+    font-size: 17px;
   }
 }
 
 #search {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 
 .banner {
   background: url("/assets/banner.png") repeat scroll center center;
-  height:299px;
-  margin-top: -2px;
+  height:222px;
+  margin-top: 0px;
 
 }
 
 .banner .banner-content {
   color: white;
   position: relative;
+  padding-left: 150px;
   h1 {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 180px;
-    padding-right: 450px;
+    padding-right: 600px;
     postion: absolute;
-    font-size: 4em;
+    font-size: 3em;
     text-align: left;  
   }
   p {
@@ -120,14 +121,18 @@ li {
   }
   .featured {
     position: absolute;
-    right: 210px;
-    top: 30px;
+    right: 400px;
+    top: 20px;
     z-index: 1;
   }
   .background {
     position: absolute;
-    right: 180px;
-    top: 60px;  
+    right: 370px;
+    top: 50px;  
+  }
+  .btn {
+  position: relative;
+  left: -100px;
   }
 }
 
@@ -151,7 +156,7 @@ li {
 
 #headsocial {
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     right: 0px;
 }
     #headsocial li {

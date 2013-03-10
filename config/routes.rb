@@ -1,11 +1,9 @@
 Iar::Application.routes.draw do
   resources :categories
-
-
   resources :posts
 
-
   root to: 'static_pages#home'
+  
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
   resources :publications do

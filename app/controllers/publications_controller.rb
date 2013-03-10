@@ -3,7 +3,6 @@ class PublicationsController < ApplicationController
 
     def new
     	@publication = Publication.new
-    	@publication_types = Publication.all_publication_types    	
     end
 
     def edit
@@ -12,7 +11,7 @@ class PublicationsController < ApplicationController
 
     def index
   	  @publications = Publication.paginate(page: params[:page], per_page: 5)
-  	  @categories = Category.all
+      @publications = @publications.by_pubtype(params[:type]) if params[:type].present?
     end
 
   	def create
