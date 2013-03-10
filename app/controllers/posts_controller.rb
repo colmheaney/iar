@@ -3,10 +3,11 @@ class PostsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.order('published_date DESC')
+    @posts = Post.order('created_at DESC')
     @posts = @posts.published if current_user.blank?
     @posts = @posts.by_user_id(params[:user]) if params[:user].present?
     @posts = @posts.by_category_id(params[:cat]) if params[:cat].present?
+    @categories = Category.all
   end
 
   def show

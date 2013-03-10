@@ -69,6 +69,11 @@ li {
   line-height: 1.7em;  
 }
 
+
+.alert {
+  margin-top: 20px;
+}
+
 /* header */
 .top {
   padding-top:10px;
@@ -165,7 +170,7 @@ li {
 
 /* main home */
 
-.main-content {
+.home-content {
   margin-top: 20px;
   h2 {
     text-align: left;
@@ -184,7 +189,7 @@ li {
 
 /* sidebar */
 
-.sidebar h2 {
+.home-sidebar h2 {
   text-align: left;
   margin-top: 90px;
   margin-bottom: 30px;
@@ -237,6 +242,47 @@ li {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);        
   }
 }
+
+
+/* Blog */
+.content {
+  margin-top: 40px;
+  h2 {
+    text-align: left;
+  }
+}
+
+.sidebar {
+  margin-top: 40px;
+  h2 {
+    text-align: left;
+  }
+}
+
+
+/* About us*/
+.about-us p {
+  margin-top: 10px;
+}
+
+blockquote {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+  border-left: none;
+  margin: 1em 3em; 
+}
+  blockquote p {
+    text-align: center;
+    font-size: 27px;
+    line-height: 2.25em;
+}
+  blockquote p:before {
+    content: '"'; }
+  blockquote p:after {
+    content: '"'; 
+}
+
 
 /* footer */
 
@@ -318,3 +364,5 @@ input {
 select.date-select {
   padding: 5px 0;
 }
+
+

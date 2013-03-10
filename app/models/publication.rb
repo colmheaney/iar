@@ -1,5 +1,5 @@
 class Publication < ActiveRecord::Base
-  attr_accessible :description, :title, :image, :file
+  attr_accessible :description, :title, :image, :file, :type
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 150 }
@@ -8,4 +8,8 @@ class Publication < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   mount_uploader :file, ImageUploader
+
+  def self.all_publication_types
+    %w(Magazine Leaflet Poster Paper)
+  end  
 end

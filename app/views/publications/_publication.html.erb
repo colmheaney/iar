@@ -1,9 +1,13 @@
-<li>
-	<%= publication.title %>
-	<%= image_tag publication.image_url(:thumb).to_s %>
-	| <%= link_to "download", download_publication_path(publication) %>
+<tr>
+	<td><%= image_tag publication.image_url(:smaller_thumb).to_s %></td>
+	<td><%= publication.title %></td>
+	<td><%= publication.description %></td>
+	<td>
+	<%= link_to "download", download_publication_path(publication) %>
 	<% if signed_in? %>
 	| <%= link_to "delete", publication, method: :delete, data: { confirm: "You sure?" } %>		
 	| <%= link_to "edit", edit_publication_path(publication) %>	
 	<% end %>
-</li>
+	</td>
+</tr>
+

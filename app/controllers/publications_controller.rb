@@ -3,6 +3,7 @@ class PublicationsController < ApplicationController
 
     def new
     	@publication = Publication.new
+    	@publication_types = Publication.all_publication_types    	
     end
 
     def edit
@@ -10,7 +11,8 @@ class PublicationsController < ApplicationController
     end
 
     def index
-  	  @publications = Publication.paginate(page: params[:page], per_page: 10)
+  	  @publications = Publication.paginate(page: params[:page], per_page: 5)
+  	  @categories = Category.all
     end
 
   	def create

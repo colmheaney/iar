@@ -5,10 +5,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-    @category = Category.find(params[:id])
-  end
-
   def new
     @category = Category.new
   end
@@ -21,7 +17,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
 
     if @category.save
-        redirect_to @category, notice: 'Category was successfully created.'
+        redirect_to categories_path, notice: 'Category was successfully created.'
     else
         render action: "new" 
     end

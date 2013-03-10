@@ -1,10 +1,38 @@
 <%= provide(:title, 'Publications') %>
-<h1>Publications</h1>
 
-<%= will_paginate %>	
+<div class="main">
+	<div class="row">
 
-<ul class="publications">
-	<%= render @publications %>
-</ul>
+        <div class="span3 sidebar">
+            <h2>Categories</h2>
+            <ul class="nav nav-tabs nav-stacked">
+                <% @categories.each do |cat| %>
+                    <li>
+                    <%= link_to cat.name, posts_path(:cat => cat.id) %>
+                    </li>
+                <% end %> 
+            </ul> 
+        </div>
 
-<%= will_paginate %>
+		<div class="span9 content">
+			<h2>Publications</h2>
+
+			<%= will_paginate %>	
+
+			<table class="table table-striped">
+				<thead>
+					<td>Image</td>
+					<td>Title</td>
+					<td>Description</td>
+					<td>Actions</td>				
+				</thead>
+				<tbody>
+					<%= render @publications %>
+				</tbody>
+			</table>
+
+			<%= will_paginate %>
+		</div>
+	</div>
+</div>
+
