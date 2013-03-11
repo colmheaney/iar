@@ -1,6 +1,7 @@
 Iar::Application.routes.draw do
   resources :categories
   resources :posts
+  resources :messages
 
   root to: 'static_pages#home'
   
@@ -13,9 +14,10 @@ Iar::Application.routes.draw do
   end
   
   match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/contact', to: 'messages#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

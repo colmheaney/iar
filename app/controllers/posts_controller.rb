@@ -12,6 +12,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    cat_names = []
+    @post.categories.each do |cat|
+      cat_names << cat.name
+    end
+    @related = Post.joins(:categories).where('categories.name' => cat_names)#.reject { |r| r.@post }#.group(:id).reject { |r| r.@post }
+
   end
 
   def new

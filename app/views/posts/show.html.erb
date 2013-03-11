@@ -1,25 +1,35 @@
 <% provide(:title, @post.title) %> 
-<h1><%= @post.title %></h1>
 
-<p id="notice"><%= notice %></p>
+<div class="main">
+	<div class="row">
+
+		<div class="span3 sidebar">
+			<h2>Related Posts</h2>
+			<%= render partial: 'shared/blog_excerpt', collection: @related %>
+		</div>
+
+		<div class="span9 content">
+			<h2><%= @post.title %></h2>
+
+			<p>
+			  <%= @post.body %>
+			</p>
+
+            <p class="timestamp">
+                Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, posts_path(:user => @post.user.id) %>
+            </p>    
+
+			<p>
+            Tags: <% @post.categories.each do |cat| %>
+                <%= link_to cat.name, posts_path(:cat => cat.id) %>
+            <% end %>
+            </p>
+
+			<% if signed_in? %>
+				<%= link_to 'Edit', edit_post_path(@post) %> 
+			<% end %>
+		</div>
+	</div>
+</div>
 
 
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-
-<p>
-  <b>Published date:</b>
-  <%= @post.published_date %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
-
-<% if signed_in? %>
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', posts_path %>

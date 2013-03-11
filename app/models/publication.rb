@@ -11,3 +11,5 @@ class Publication < ActiveRecord::Base
 
   scope :by_pubtype, lambda { |type| where(:pubtype => type) }
 end
+
+
