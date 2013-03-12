@@ -16,11 +16,8 @@ class PostsController < ApplicationController
     @post.categories.each do |cat|
       cat_names << cat.name
     end
-    @related = Post.joins(:categories).where('categories.name' => cat_names).group(:id)
-    # @related = Post.find_by_sql ["SELECT * FROM posts INNER JOIN categories_posts 
-    #                           ON categories_posts.post_id = posts.id INNER JOIN categories
-    #                           ON categories.id = categories_posts.category_id WHERE categories.name
-    #                           IN :cat_names", :cat_names => ('Second category')] #WHERE posts.id <> ?", @post.id]
+    @related = Post.joins(:categories).where('categories.name' => cat_names).where('posts.id <> ?', @post.id).uniq
+
   end
 
   def new
