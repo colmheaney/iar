@@ -32,7 +32,7 @@
 
             <p>
             Tags: <% post.categories.each do |cat| %>
-                <%= link_to cat.name, posts_path(:cat => cat.id) %>
+                <%= link_to cat.name, posts_path(:cat => cat.id), { :class=> "label" } %>
             <% end %>
             </p>
 
