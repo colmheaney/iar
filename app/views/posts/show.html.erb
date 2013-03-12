@@ -3,20 +3,24 @@
 <div class="main">
 	<div class="row">
 
-		<div class="span3 sidebar">
-			<h2>Related Posts</h2>
-			<%= render partial: 'shared/blog_excerpt', collection: @related %>
-		</div>
+		<div class="span8 content">
 
-		<div class="span9 content">
+			<p>
+				<%= @post.published_date.strftime(" %d %B %Y") %>
+			</p>
+
 			<h2><%= @post.title %></h2>
+
+			<p>
+				By <%= link_to @post.user.name, posts_path(:user => @post.user.id) %>
+			</p>
 
 			<p>
 			  <%= @post.body %>
 			</p>
 
             <p class="timestamp">
-                Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, posts_path(:user => @post.user.id) %>
+                Posted <%= time_ago_in_words(@post.created_at) %> ago
             </p>    
 
 			<p>
@@ -29,6 +33,12 @@
 				<%= link_to 'Edit', edit_post_path(@post) %> 
 			<% end %>
 		</div>
+
+		<div class="span4 sidebar">
+			<h2>Related Posts</h2>
+			<%= render partial: 'shared/blog_excerpt', collection: @related %>
+		</div>
+
 	</div>
 </div>
 
