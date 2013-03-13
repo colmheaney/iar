@@ -2,8 +2,10 @@ class EventsController < ApplicationController
 	before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
 	
 	def index
-		@events = Event.paginate(page: params[:page], per_page: 10)		
-	end
+    	@events = Event.order('date DESC').paginate(page: params[:page], per_page: 5)		
+      	@events = @events.by_type(params[:type]) if params[:type].present? 
+
+ 	end
 
 	def show
 		@event = Event.find(params[:id])		

@@ -269,13 +269,17 @@ li {
 .about-us p {
   margin-top: 10px;
 }
+#about-btn {
+  margin-top:20px;
+}
+
 
 blockquote {
   color: #999999;
   font-weight: bold;
   font-style: italic;
   border-left: none;
-  margin: 1em 3em; 
+  margin: 1em 3em 3em; 
 }
   blockquote p {
     text-align: center;
@@ -368,6 +372,16 @@ input {
 
 select.date-select {
   padding: 5px 0;
+}
+
+.actions {
+  clear:both;
+  margin-left:30px;
+
+}
+
+.form {
+  margin-left:-30px;
 }
 
 

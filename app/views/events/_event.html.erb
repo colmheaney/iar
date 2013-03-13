@@ -1,8 +1,18 @@
 <li>
-	<%= link_to event.title, event %>
-	<%= event.date %>
-	<% if signed_in? %>
-	| <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>		
-	| <%= link_to "edit", edit_event_path(event) %>	
-	<% end %>
+    <h2><%= event.title %></h2>
+
+    <% if  event.eventtype == 'event' %>
+        Date: <%= event.date %>, Location: <%= event.location %>
+        <br />
+    <% end %>
+
+    <%= event.description %>
+
+    <br />
+    <br />
+
+    <% if signed_in? %>
+    <%= link_to 'Edit', edit_event_path(event) %>
+    <%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 </li>

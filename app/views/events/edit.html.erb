@@ -1,3 +1,4 @@
+
 <%= provide(:title, "Update event") %>
 <h1>Update event</h1>
 
@@ -16,7 +17,10 @@
 			<%= f.text_field :location %>
 
 			<%= f.label :date %>
-			<%= f.date_select(:date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span2 date-select"}) %>		
+			<%= f.date_select(:date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span1 date-select"}) %>	
+
+			<%= f.label :eventtype %>
+			<%= f.select :eventtype, [['news'], ['event']], :placeholder => 'Event Type' %>
 
 			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		<% end %>

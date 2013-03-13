@@ -12,6 +12,12 @@
                     </li>
                 <% end %> 
             </ul> 
+
+          <% if signed_in? %>
+            <p><%= link_to "Add new post", new_post_path %></p> 
+            <p><%= link_to "Categories", categories_path %></p> 
+            <p><%= link_to "Add new category", new_category_path %></p>          
+          <% end %>  
         </div>
 
         <div class="span9 content">
