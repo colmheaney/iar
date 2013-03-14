@@ -6,17 +6,11 @@
             <h2>Types</h2>
             <ul class="nav nav-tabs nav-stacked">
                 <li>
-                    <%= link_to 'Events', events_path(:type => 'event') %>
+                    <%= link_to 'Events', events_path %>
                 </li>
-<!--                 <li>
-                    <%= link_to 'Previous Events', events_path(:type => 'previous') %>
-                </li>  -->
                 <li>
                      <%= link_to 'News', events_path(:type => 'news') %>
                 </li> 
-                <li>
-                     <%= link_to 'All', events_path %>
-                </li>                                                
             </ul> 
 
         <% if signed_in? %>
@@ -26,15 +20,21 @@
 		</div>
 
 		<div class="span9">
-			<h2>News/Events</h2>
+			
+            <% if @news_events %>
+ 
+            <h2>News</h2>
+            <%= render @news_events %>
+ 
+            <% else %>
+ 
+            <h2>Upcoming Events</h2>
+            <%= render @upcoming_events %>
+            <h2 id="second">Recent Events</h2>
+            <%= render @past_events %>
+            <% end %>
 
-			<%= will_paginate %>	
 
-			<ul class="events">
-				<%= render @events %>
-			</ul>
-
-			<%= will_paginate %>
 		</div>
 	</div>
 </div>

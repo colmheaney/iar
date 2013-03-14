@@ -18,8 +18,8 @@
 			<%= f.label :date %>
 			<%= f.date_select(:date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span1 date-select"}) %>
 
-			<%= f.label :eventtype %>
-			<%= f.select :eventtype, [['news'], ['event']] %>			
+			<%= f.radio_button :news, 1 %><%= f.label :news %>
+			<%= f.radio_button :news, 0 %><%= f.label :event %>	
 
 			<%= f.submit "Add new event", class: "btn btn-large btn-primary" %>
 		<% end %>

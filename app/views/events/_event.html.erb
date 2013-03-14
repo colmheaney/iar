@@ -1,18 +1,15 @@
-<li>
-    <h2><%= event.title %></h2>
+<h4><%= event.title %></h4>
 
-    <% if  event.eventtype == 'event' %>
-        Date: <%= event.date %>, Location: <%= event.location %>
-        <br />
-    <% end %>
+<%= event.description %>
+<br />
+<br />
+<%= event.date.strftime(" %d %B %Y") %> 
+<% if !event.location.blank? %><span> | </span><% end %>
+<%= event.location %>
+<br />
+<br />
 
-    <%= event.description %>
-
-    <br />
-    <br />
-
-    <% if signed_in? %>
-    <%= link_to 'Edit', edit_event_path(event) %>
-    <%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-</li>
+<% if signed_in? %>
+<%= link_to 'Edit', edit_event_path(event) %>
+<%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
