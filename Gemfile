@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'active_attr'
+gem 'fog', '~> 1.3.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
