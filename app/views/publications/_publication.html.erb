@@ -4,6 +4,7 @@
 	<td><%= publication.description %></td>
 	<td>
 	<%= link_to "download", download_publication_path(publication) %>
+	| <%= link_to "view", publication.file_url.to_s %>
 	<% if signed_in? %>
 	| <%= link_to "delete", publication, method: :delete, data: { confirm: "You sure?" } %>		
 	| <%= link_to "edit", edit_publication_path(publication) %>	

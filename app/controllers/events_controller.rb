@@ -2,15 +2,11 @@ class EventsController < ApplicationController
 	before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
 	
 	def index
-    	@upcoming_events = Event.order('date DESC').where('date >= ?', Date.today).where('news = ?', 0)	
+    	@upcoming_events = Event.order('date ASC').where('date >= ?', Date.today).where('news = ?', 0)	
       	@past_events 	 = Event.order('date DESC').where('date < ?', Date.today).where('news = ?', 0)	
       	@news_events	 = Event.by_news if params[:type].present? 
 
  	end
-
-	def show
-		@event = Event.find(params[:id])		
-	end
 
 	def new
 		@event = Event.new
@@ -20,7 +16,7 @@ class EventsController < ApplicationController
 		@event = Event.new(params[:event])
 		if @event.save
 			flash[:success] = "Event successfully added"
-			redirect_to @event
+			redirect_to events_path
 		else
 			render 'new'
 		end
@@ -34,7 +30,7 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		if @event.update_attributes(params[:event])
 			flash[:success] = "Event Updated"
-			redirect_to @event
+			redirect_to events_path
 		else
 			render 'edit'
 		end

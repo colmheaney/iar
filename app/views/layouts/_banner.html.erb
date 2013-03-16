@@ -2,7 +2,7 @@
 	<div class="banner-content container">
 		<% @publication.each do |pub| %>
 		<h1>Read the IAR digital magazine. <%= pub.title %> is out now!</h1>
-		<p><%= link_to "Read Now", download_publication_path(@publication), class: "btn btn-large btn-primary" %>
+		<p><%= link_to "Read Now", pub.file_url.to_s, class: "btn btn-large btn-primary" %>
 		</p>
 		<%= image_tag pub.image_url(:thumb).to_s, class: "featured"%>
 		<img class="background" src="/assets/page_2_thumb_large.jpg">

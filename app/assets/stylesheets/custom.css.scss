@@ -95,7 +95,7 @@ li {
 
 
 .banner {
-  background: url("/assets/banner.png") repeat scroll center center;
+  background: url("/assets/darkergreencloth.png") repeat scroll center center;
   height:222px;
   margin-top: 0px;
 
@@ -224,6 +224,9 @@ li {
     font-weight: bold;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);        
   }
+  a {
+      color: #3A87AD;
+  }  
 }
 
 .event-latest {
@@ -244,7 +247,11 @@ li {
     font-size: 14px;
     line-height: 18px;
     font-weight: bold;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);        
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); 
+ 
+  }
+  a {
+      color: #468847;
   }
 }
 
