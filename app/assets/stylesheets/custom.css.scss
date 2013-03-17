@@ -95,7 +95,7 @@ li {
 
 
 .banner {
-  background: url("/assets/darkergreencloth.png") repeat scroll center center;
+  background: url("/assets/darkergreencloth3.png") repeat scroll center center;
   height:222px;
   margin-top: 0px;
 
@@ -111,7 +111,8 @@ li {
     padding-right: 600px;
     postion: absolute;
     font-size: 3em;
-    text-align: left;  
+    text-align: left; 
+    text-shadow: -2px -1px 5px #707070;
   }
   p {
     margin-top: 42px;
@@ -124,11 +125,17 @@ li {
     right: 400px;
     top: 20px;
     z-index: 1;
+    -moz-box-shadow:    -2px -1px 5px #707070;
+    -webkit-box-shadow: -2px -1px 5px #707070;
+    box-shadow: -2px -1px 5px #707070;
   }
   .background {
     position: absolute;
     right: 370px;
-    top: 50px;  
+    top: 50px; 
+    -moz-box-shadow:    -2px -1px 5px #707070;
+    -webkit-box-shadow: -2px -1px 5px #707070;
+    box-shadow: -2px -1px 5px #707070;
   }
   .btn {
   position: relative;
