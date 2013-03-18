@@ -1,28 +1,11 @@
+<% provide(:title, 'Update Event') %> 
+<div class="main">
+  <div class="row">
+    <div class="content">
+    <h2>Update Event</h2>
 
-<%= provide(:title, "Update event") %>
-<h1>Update event</h1>
+    <%= render 'form' %>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@event) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
-
-			<%= f.label :title %>
-			<%= f.text_field :title %>
-
-			<%= f.label :description %>
-			<%= f.text_area :description, :class => 'ckeditor' %>
-
-			<%= f.label :location %>
-			<%= f.text_field :location %>
-
-			<%= f.label :date %>
-			<%= f.date_select(:date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span1 date-select"}) %>	
-
-			<%= f.radio_button :news, 1 %><%= f.label :news %>
-			<%= f.radio_button :news, 0 %><%= f.label :event %>
-
-			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
+    </div>
+  </div>
 </div>

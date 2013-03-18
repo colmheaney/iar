@@ -113,7 +113,8 @@ li {
     postion: absolute;
     font-size: 3em;
     text-align: left; 
-    text-shadow: 0 0 0 transparent, -2px -1px 5px #707070;
+    text-shadow: -2px -1px 5px #707070;
+
   }
   p {
     margin-top: 42px;
@@ -384,7 +385,7 @@ input {
   }
 }
 
-select.date-select {
+select.date-select, #publication_pubtype {
   padding: 5px 0;
 }
 
@@ -396,6 +397,14 @@ select.date-select {
 
 .form {
   margin-left:-30px;
+}
+
+#bootstrap-link {
+    color: #0088CC;
+    text-decoration: none; 
+    &:hover {
+      text-decoration: underline;     
+    } 
 }
 
 

@@ -1,27 +1,31 @@
-<%= provide(:title, "Update publication") %>
-<h1>Update publication</h1>
+<%= provide(:title, "Update Publication") %>
 
-<div class="row">
-	<div class="span6 offset3">
+<div class="main">
+  <div class="row">
+  	<div class="content span6">
+		<h2>Update Publication</h2>
+
 		<%= form_for(@publication) do |f| %>
-			<%= render 'shared/error_messages', object: f.object  %>
+			<%= render 'shared/error_messages', object: f.object %>
 
 			<%= f.label :title %>
 			<%= f.text_field :title %>
 
 			<%= f.label :description %>
-			<%= f.text_area :description %>
+			<%= f.text_area :description, :rows => 5 %>
 
-			<%= f.label :pubtype %>
-			<%= f.select :pubtype, [['Papers'], ['Magazines'], ['Leaflets']] %>			
+			<%= f.label :type %>
+			<%= f.select :pubtype, [['Papers'], ['Magazines'], ['Leaflets']] %>
 
 			<%= f.label :image, "Choose Image:" %>
 			<%= f.file_field :image %>
 
 			<%= f.label :file, "Choose File:" %>
-			<%= f.file_field :file %>	
-
-			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+			<%= f.file_field :file %>			
+			
+			<%= f.submit "Update publication", class: "btn btn-large btn-primary" %>
 		<% end %>
-	</div>
+
+  	</div>
+  </div>
 </div>

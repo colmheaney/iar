@@ -1,8 +1,10 @@
 <%= provide(:title, "Add new Publication") %>
-<h1>Add new Publication</h1>
 
-<div class="row">
-	<div class="span6 offset3">
+<div class="main">
+  <div class="row">
+  	<div class="content span6">
+		<h2>Add new Publication</h2>
+
 		<%= form_for(@publication) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 
@@ -10,10 +12,10 @@
 			<%= f.text_field :title %>
 
 			<%= f.label :description %>
-			<%= f.text_area :description %>
+			<%= f.text_area :description, :rows => 5 %>
 
-			<%= f.label :pubtype %>
-			<%= f.select :pubtype, [['Papers'], ['Magazines'], ['Leaflets']] %>
+			<%= f.label :type,  %>
+			<%= f.select :pubtype, [['Papers'], ['Magazines'], ['Leaflets']], {class: "date-select"} %>
 
 			<%= f.label :image, "Choose Image:" %>
 			<%= f.file_field :image %>
@@ -23,6 +25,7 @@
 			
 			<%= f.submit "Add new publication", class: "btn btn-large btn-primary" %>
 		<% end %>
-	</div>
-</div>
 
+  	</div>
+  </div>
+</div>

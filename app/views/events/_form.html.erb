@@ -1,0 +1,33 @@
+<%= form_for(@event) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<div class="field span4">
+
+		<%= f.label :date %><br />
+		<%= f.date_select(:date, {:use_short_month => 1, :order => [:month, :day, :year]}, {class: "span1 date-select"}) %>	
+		
+		<br />
+
+		<%= f.radio_button :news, 1 %><%= f.label :news %>
+		<%= f.radio_button :news, 0 %><%= f.label :event %>
+	
+
+	</div>
+
+	<div class="field span8">
+
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :description %>
+		<%= f.text_area :description, :class => 'ckeditor' %>
+		<br />
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+
+
+
+		<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	</div>
+
+<% end %>
