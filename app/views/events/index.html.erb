@@ -23,13 +23,18 @@
 			
             <% if @news_events %>
  
-            <h2>News</h2>
-            <%= render @news_events %>
+                <h2>News</h2>
+                <%= render @news_events %>
  
             <% else %>
- 
-            <h2>Upcoming Events</h2>
-            <%= render @upcoming_events %>
+
+            <h2>Upcoming Events</h2>    
+                <% if @upcoming_events.blank? %>
+                    <p>There are no upcoming events</p>
+                <% else %>
+                    <%= render @upcoming_events %>
+                <% end %>
+            
             <h2 id="second">Recent Events</h2>
             <%= render @past_events %>
             <% end %>

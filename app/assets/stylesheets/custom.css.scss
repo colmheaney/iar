@@ -16,6 +16,7 @@ $grayMediumLight: #eaeaea;
 html {
   overflow-y: scroll;
 
+
 }
 
 body {
@@ -112,7 +113,7 @@ li {
     postion: absolute;
     font-size: 3em;
     text-align: left; 
-    text-shadow: -2px -1px 5px #707070;
+    text-shadow: 0 0 0 transparent, -2px -1px 5px #707070;
   }
   p {
     margin-top: 42px;
@@ -146,17 +147,16 @@ li {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+}
+
+logo {
+  max-width: 100%;  
+}
+
+
+#logo-container {
+  width: 150px;
+
 }
 
 /* headsocial */
@@ -218,7 +218,7 @@ li {
   border-radius: 4px 4px 4px 4px;
   margin-bottom: 18px;
   padding: 8px 35px 8px 14px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   p {
       font-size: 13px;
       line-height: 18px;
