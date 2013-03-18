@@ -1,6 +1,6 @@
 <h4><%= event.title %></h4>
 
-<%= event.description %>
+<%= event.description.html_safe %>
 <br />
 <br />
 <%= event.date.strftime(" %d %B %Y") %> 

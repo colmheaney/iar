@@ -10,6 +10,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'active_attr'
 gem 'fog', '~> 1.3.1'
+gem 'ckeditor_rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
