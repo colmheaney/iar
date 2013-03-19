@@ -4,6 +4,7 @@
 	<span class="timestamp">
 		Posted <%= time_ago_in_words(blog_excerpt.created_at) %> ago by <%= link_to blog_excerpt.user.name, posts_path(:user => blog_excerpt.user.id) %>
 	</span>
+	<hr />
 </div>
 
 

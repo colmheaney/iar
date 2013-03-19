@@ -21,6 +21,7 @@ html {
 
 body {
   padding-top: 0px;
+  background: url("/images/bg.gif") repeat scroll 0 0 #F6F6F6;
 }
 
 section {
@@ -56,7 +57,7 @@ h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-weight: normal;
   color: $grayLight;
 }
@@ -84,20 +85,25 @@ li {
 }
 
 .navbar-inner {
+
   li {
     line-height: 20px;
     font-size: 17px;
   }
 }
 
-#search {
-  margin-top: 6px;
+.nav-tabs {
+    border-bottom: 1px solid #DDDDDD;
 }
 
+.nav-tabs > .active > a, .nav-tabs > .active > a:focus, .nav-tabs > .active > a:hover {
+      background-color: #FBFBFB;    
+
+}
 
 .banner {
-  background: url("/assets/darkergreencloth3.png") repeat scroll center center;
-  height:222px;
+  background: url("/assets/litegreencloth.png") repeat scroll center center;
+  height:197px;
   margin-top: 0px;
 
 }
@@ -200,12 +206,26 @@ logo {
   margin-bottom:30px;
 }
 
+.tab-content {
+  background: none repeat scroll 0 0 #FBFBFB;
+  border-bottom: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD;
+  padding: 20px 20px;
+  margin-top: -20px;
+}
+
 /* sidebar */
 
-.home-sidebar h2 {
+.side-content {
+  background: none repeat scroll 0 0 #FBFBFB;  
+  border: 1px solid #DDDDDD;
+  padding: 20px 20px;
   text-align: left;
-  margin-top: 90px;
-  margin-bottom: 30px;
+  margin-top: 56px;
+  h2 {
+    margin-top: 10px;
+  }
 }
 
 #second {
@@ -213,12 +233,8 @@ logo {
 }
 
 .blog-latest {
-  background-color: #D9EDF7;
-  border: 1px solid #BCE8F1;  
   color: #3A87AD; 
-  border-radius: 4px 4px 4px 4px;
   margin-bottom: 18px;
-  padding: 8px 35px 8px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   p {
       font-size: 13px;
@@ -238,12 +254,9 @@ logo {
 }
 
 .event-latest {
-  background-color: #DFF0D8;
-  border: 1px solid #D6E9C6;  
   color: #468847; 
   border-radius: 4px 4px 4px 4px;
   margin-bottom: 18px;
-  padding: 8px 35px 8px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  
   p {
       font-size: 13px;
