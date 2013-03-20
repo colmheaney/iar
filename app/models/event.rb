@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
     validates :title, presence: true, length: { maximum: 50 }
     validates :news, presence: true
-    validates :description, presence: true, length: { maximum: 300 }
+    validates :description, presence: true
 	
 	scope :by_news, lambda { where(['news = ?', 1]) }
 end

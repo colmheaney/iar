@@ -2,7 +2,6 @@
 
 <%= event.description.html_safe %>
 <br />
-<br />
 <%= event.date.strftime(" %d %B %Y") %> 
 <% if !event.location.blank? %><span> | </span><% end %>
 <%= event.location %>
@@ -13,3 +12,4 @@
 <%= link_to 'Edit', edit_event_path(event) %>
 <%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+<hr />
