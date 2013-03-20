@@ -5,7 +5,7 @@
 
         <div class="span3 sidebar">
             <h2>Types</h2>
-            <ul class="nav nav-tabs nav-stacked">
+            <ul class="nav nav-tabs nav-stacked white-nav">
                 <li>
                     <%= link_to 'Magazines', publications_path(:type => 'Magazines') %>
                 </li>
@@ -25,24 +25,26 @@
         <% end %>
         </div>
 
-		<div class="span9 content">
+		<div class="span9 main-container">
 			<h2>Publications</h2>
 
-			<%= will_paginate %>	
+            <div class="content">
+                <%= will_paginate %>    
 
-			<table class="table table-striped">
-				<thead>
-					<td style="width: 20%">Image</td>
-					<td style="width: 10%">Title</td>
-					<td style="width: 40%">Description</td>
-					<td style="width: 30%">Actions</td>				
-				</thead>
-				<tbody>
-					<%= render @publications %>
-				</tbody>
-			</table>
+                <table class="table table-striped">
+                    <thead>
+                        <td style="width: 20%">Image</td>
+                        <td style="width: 10%">Title</td>
+                        <td style="width: 40%">Description</td>
+                        <td style="width: 30%">Actions</td>             
+                    </thead>
+                    <tbody>
+                        <%= render @publications %>
+                    </tbody>
+                </table>
 
-			<%= will_paginate %>
+                <%= will_paginate %>
+            </div>
 		</div>
 	</div>
 </div>

@@ -4,52 +4,55 @@
     <div class="row">
 
         <div class="span3 sidebar">
-            <h2>Categories</h2>
-            <ul class="nav nav-tabs nav-stacked">
-                <% @categories.each do |cat| %>
-                    <li>
-                    <%= link_to cat.name, posts_path(:cat => cat.id) %>
-                    </li>
-                <% end %> 
-            </ul> 
+                <h2>Categories</h2>
+                <ul class="nav nav-tabs nav-stacked white-nav">
+                    <% @categories.each do |cat| %>
+                        <li>
+                        <%= link_to cat.name, posts_path(:cat => cat.id) %>
+                        </li>
+                    <% end %> 
+                </ul> 
 
-          <% if signed_in? %>
-            <p><%= link_to "Add new post", new_post_path %></p> 
-            <p><%= link_to "Categories", categories_path %></p> 
-            <p><%= link_to "Add new category", new_category_path %></p>          
-          <% end %>  
+              <% if signed_in? %>
+                <p><%= link_to "Add new post", new_post_path %></p> 
+                <p><%= link_to "Categories", categories_path %></p> 
+                <p><%= link_to "Add new category", new_category_path %></p>          
+              <% end %> 
         </div>
 
-        <div class="span9 content">
-            <h2>Welcome to the Blog!</h2>
 
-            <% @posts.each do |post| %>
+        <div class="span9 main-container blog-latest">
+        <h2>Welcome to the Blog!</h2>
+            <div class="content">
+               <% @posts.each do |post| %>
 
-            <h4><%= link_to post.title, post_path(post) %></h4>
+                <h4><%= link_to post.title, post_path(post) %></h4>
 
-            <p class="timestamp">
-                Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, posts_path(:user => post.user.id) %>
-            </p>
+                <p class="timestamp">
+                    Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, posts_path(:user => post.user.id) %>
+                </p>
 
-            <%= excerpt post %>
+                <%= excerpt post %>
 
-            <br />
-            <br />
+                <br />
+                <br />
 
-            <p>
-            Tags: <% post.categories.each do |cat| %>
-                <%= link_to cat.name, posts_path(:cat => cat.id), { :class=> "label" } %>
-            <% end %>
-            </p>
-
-            <% if current_user?(post.user) %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <p>
+                Tags: <% post.categories.each do |cat| %>
+                    <%= link_to cat.name, posts_path(:cat => cat.id), { :class=> "label" } %>
                 <% end %>
+                </p>
 
-            <hr />
+                <% if current_user?(post.user) %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
 
-            <% end %>
+                <hr />
+
+                <% end %>
+            </div>
+ 
 
         </div>
 

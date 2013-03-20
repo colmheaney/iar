@@ -2,12 +2,16 @@
 	<div class="row">
 		<div class="span4 home-sidebar" >
 
-			<div class="side-content">
+			<div class="event-content">
 				
-				<h2 id="first">Latest News/Events</h2>
+				<h2>Latest News/Events</h2>
 				<%= render partial: 'shared/event_excerpt', collection: @event_excerpts %>
 
-				<h2 id="second">Latest from the Blog</h2>
+			</div>
+
+			<div class="blog-content">
+
+				<h2>Latest from the Blog</h2>
 				<%= render partial: 'shared/blog_excerpt', collection: @blog_excerpts %>
 
 			</div>

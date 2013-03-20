@@ -1,10 +1,10 @@
 <%= provide(:title, 'News/Events') %>
 
-<div class="main content">
+<div class="main">
 	<div class="row">
-		<div class="span3">
+		<div class="span3 sidebar">
             <h2>News/Events</h2>
-            <ul class="nav nav-tabs nav-stacked">
+            <ul class="nav nav-tabs nav-stacked white-nav">
                 <li>
                     <%= link_to 'Events', events_path %>
                 </li>
@@ -19,28 +19,31 @@
 
 		</div>
 
-		<div class="span9">
-			
-            <% if @news_events %>
- 
-                <h2>News</h2>
-                <%= render @news_events %>
- 
-            <% else %>
+	<div class="span9 main-container event-latest">
+        <% if @news_events %>
+        <h2>News</h2> 
+        <% else %>
+        <h2>Upcoming Events</h2> 
+        <% end %>
 
-            <h2>Upcoming Events</h2>    
+        <div class="content">
+            <% if @news_events %>
+            <%= render @news_events %>
+        </div>
+            <% else %>
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
                 <% else %>
                     <%= render @upcoming_events %>
                 <% end %>
-            
-            <h2 id="second">Recent Events</h2>
+        </div>
+
+        <h2 id="second">Recent Events</h2>
+        <div class="content">
             <%= render @past_events %>
-            <% end %>
-
-
-		</div>
-	</div>
+        </div>
+        <% end %>
+    </div>
+    </div>
 </div>
 
