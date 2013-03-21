@@ -5,18 +5,17 @@
 
 		<div class="span8">
 
-			<h2><%= @post.title %></h2>
+			<h2 id="blog-heading"><%= @post.title %></h2>
+
+			<span id="posted-info">By <%= link_to @post.user.name, posts_path(:user => @post.user.id) %> | <%= @post.published_date.strftime(" %d %B %Y") %></span>
 
 			<div class="tab-content2">
-				<p>
-					By <%= link_to @post.user.name, posts_path(:user => @post.user.id) %> | <%= @post.published_date.strftime(" %d %B %Y") %>
-				</p>
-
-				<br />
 
 				<p>
 				  <%= @post.body.html_safe %>
 				</p>
+
+				<br />
 
 				<p>
 	            Tags: <% @post.categories.each do |cat| %>
