@@ -3,15 +3,15 @@
 		<div class="span4 home-sidebar" >
 
 			<div class="event-content">
-				
 				<h2>Latest News/Events</h2>
+				<hr />
 				<%= render partial: 'shared/event_excerpt', collection: @event_excerpts %>
 
 			</div>
 
 			<div class="blog-content">
-
 				<h2>Latest from the Blog</h2>
+				<hr />
 				<%= render partial: 'shared/blog_excerpt', collection: @blog_excerpts %>
 
 			</div>
@@ -56,6 +56,10 @@
 					<li>Show and tell: students bring in items they consider to be ancient for discussion.</li>
 					<li>How prehistoric pottery was made and decorated.</li>
 				</ul>
+
+				<div class="logo">
+					<img src="assets/Logo.jpg">
+				</div>
 
 		    </div>
 		    <div id="pane2" class="tab-pane">
