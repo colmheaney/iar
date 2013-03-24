@@ -2,7 +2,7 @@
 	<% if event_excerpt.news == 1 %>
 		<h4> <%= link_to event_excerpt.title, events_path(:type => 'news') %></h4>		
 	<% else %>
-		<h4> <%= link_to event_excerpt.title, events_path %></h4>		
+		<h4> <%= link_to event_excerpt.title, events_path %> | <%= event_excerpt.date.strftime(" %d %B %Y") %> | <%= event_excerpt.location %></h4>		
 	<% end %>
 
 	<p> <%= raw(truncate(event_excerpt.description, :length => 150, :omission => "... #{link_to "(read more)", events_path}")) %> </p>	
