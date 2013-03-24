@@ -1,12 +1,30 @@
-<div class="banner center hidden-phone">
-	<div class="banner-content container">
-		<% @publication.each do |pub| %>
-		<h1>Read the IAR digital magazine. <%= pub.title %> is out now!</h1>
-		<%= image_tag pub.image_url(:thumb).to_s, class: "featured"%>
-		<img class="background" src="/assets/page_2_thumb_large.jpg">
-		<% end %>
-	
-	</div>
-</div>
+  <div id="masthead" class="masthead-home">
 
+    <div class="masthead-container">
+
+  	<% @publication.each do |pub| %>
+
+        <div class="content-left">
+
+          <h1>Read the IAR digital magazine.</h1>
+
+          <p>Issue 4 is out now! Including excavations at Custom House Square, latest updates from the Belfast Hills partnership, IAR festival of Archaelogy events and much more!</p>
+
+          <%= link_to "Read Now", pub.file_url.to_s, {class: "btn btn-large btn-inverse"} %>
+    
+        </div><!--/.content-left-->
+
+    	  <div class="content-right">
+
+          <a href="#" class="frame">
+            <img src="/assets/frontcover.jpg">
+          </a>
+
+    	  </div><!--/.content-right-->
+
+  	<% end %>
+
+    </div><!--/.container-->
+
+  </div><!--/#masthead-->
 

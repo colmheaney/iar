@@ -12,6 +12,8 @@
     <%= render 'layouts/header' %>  
     <% if current_page?('/') %>
       <%= render 'layouts/banner'  %>
+    <% else %>
+      <%= render 'layouts/mastheadsub' %>
     <% end %>    
     <div class="container">
       <% flash.each do |key, value| %>
