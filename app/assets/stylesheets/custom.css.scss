@@ -1,5 +1,8 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,800";
+@import "http://fonts.googleapis.com/css?family=Ubuntu:400,500";
+
 
 /* mixins, variables, etc. */
 
@@ -189,7 +192,6 @@ li {
     color: #89B06C; 
     font-size: 14px;
     line-height: 18px;
-    font-weight: bold;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); 
  
   }
