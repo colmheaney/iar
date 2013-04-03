@@ -1,8 +1,8 @@
 <div class="event-latest">
 	<% if event_excerpt.news == 1 %>
-		<h4> <%= link_to event_excerpt.title, events_path(:type => 'news') %></h4>		
+		<h5> <%= link_to event_excerpt.title, events_path(:type => 'news') %></h5>		
 	<% else %>
-		<h4> <%= link_to event_excerpt.title, events_path %> | <%= event_excerpt.date.strftime(" %d %B %Y") %> | <%= event_excerpt.location %></h4>		
+		<h5> <%= link_to event_excerpt.title, events_path %> | <%= event_excerpt.date.strftime(" %d %B %Y") %> | <%= event_excerpt.location %></h5>		
 	<% end %>
 
 	<p> <%= raw(truncate(event_excerpt.description, :length => 150, :omission => "... #{link_to "(read more)", events_path}")) %> </p>	
