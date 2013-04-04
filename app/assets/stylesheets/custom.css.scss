@@ -116,7 +116,7 @@ li {
 
 .tab-content {
   background: none repeat scroll 0 0 #FBFBFB;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); 
   padding: 20px 20px;
   margin-top: -20px;
   margin-left: 1px;
@@ -134,7 +134,7 @@ li {
 
 .event-content {
   background: none repeat scroll 0 0 #FBFBFB;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); 
   padding: 20px 20px;
   text-align: left;
   margin-top: 66px;
@@ -145,7 +145,7 @@ li {
 
 .blog-content {
   background: none repeat scroll 0 0 #FBFBFB;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); 
   padding: 20px 20px;
   text-align: left;
   margin-top: 30px;
@@ -462,6 +462,7 @@ navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
     background-color: #89B06C;
     color: white;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
 .nav-pills {
