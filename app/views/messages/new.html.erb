@@ -1,29 +1,29 @@
 <% provide(:title, 'Contact Us') %>
 
-<div class="main main-container">
+<div class="main">
   <div class="row">
+
     <%= form_for(@message) do |f| %>    
     <%= render 'shared/error_messages', object: f.object %>
 
-      <div class="span6 offset2">
-       <h2>Contact Us</h2>
-        <div class="form">
-          <div class="field span3">
-            <%= f.text_field :name, :placeholder => 'Name' %>
-          </div>
-          <div class="field span3">
-            <%= f.text_field :email,  :placeholder => 'Email'  %>
-          </div>
-          <div class="field span6">
-            <%= f.text_area :content, :rows => 5, :placeholder => 'Message'  %>
-          </div>
-          <div class="actions"><%= f.submit "Send", :class => 'btn btn-primary btn-large'  %>
-          </div>          
+    <div class="span6 form">
+      <h2>Contact Us</h2>
+      <div>
+        <div>
+          <%= f.text_field :name, :placeholder => 'Name' %>
         </div>
-
+        <div>
+          <%= f.text_field :email,  :placeholder => 'Email'  %>
+        </div>
+        <div>
+          <%= f.text_area :content, :rows => 5, :placeholder => 'Message'  %>
+        </div>
+        <div><%= f.submit "Send", :class => 'btn btn-primary btn-large'  %>
+        </div>          
       </div>
+    </div>
 
-    <div class="span4 pull-right">
+    <div class="span4 tab-content">
       <h2>Opening Hours</h2>
       8am-4pm, Monday-Friday <br />
       <br />

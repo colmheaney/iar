@@ -1,14 +1,13 @@
-<div class="event-latest">
+<li>
 	<% if event_excerpt.news == 1 %>
-		<h5> <%= link_to event_excerpt.title, events_path(:type => 'news') %></h5>		
+		<h3><%= link_to event_excerpt.title, events_path(:type => 'news') %></h3>	
 	<% else %>
-		<h5> <%= link_to event_excerpt.title, events_path %> | <%= event_excerpt.date.strftime(" %d %B %Y") %> | <%= event_excerpt.location %></h5>		
+		<h3><%= link_to event_excerpt.title, events_path %></h3>
+		<p class="meta"><%= event_excerpt.date.strftime(" %d %B %Y") %> - <%= event_excerpt.location %></p>
 	<% end %>
 
-	<p> <%= raw(truncate(event_excerpt.description, :length => 150, :omission => "... #{link_to "(read more)", events_path}")) %> </p>	
-	<span class="timestamp">
-		Posted <%= time_ago_in_words(event_excerpt.created_at) %> ago.
-	</span>
-</div>
+	<p class="body"><%= raw(truncate(event_excerpt.description, :length => 150, :omission => "... #{link_to "(read more)", events_path}")) %></p>	
+	<span class="timestamp">Posted <%= time_ago_in_words(event_excerpt.created_at) %> ago.</span>
+</li>
 
 

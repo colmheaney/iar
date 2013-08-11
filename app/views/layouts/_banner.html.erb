@@ -1,30 +1,10 @@
-  <div id="masthead" class="masthead-home">
+<div id="masthead">
 
-    <div class="masthead-container">
+	<div id="masthead-container">
+		<img src="/assets/logo_1.png">
+		<h1>Irish Archaeological Research</h1>
+		<p>Bringing our local heritage to the world</p>
+	</div>
 
-  	<% @publication.each do |pub| %>
-
-        <div class="content-left">
-
-          <h1>Read the IAR digital magazine.</h1>
-
-          <p>Issue 4 is out now! Including excavations at Custom House Square, latest updates from the Belfast Hills partnership, IAR festival of Archaelogy events and much more!</p>
-
-          <%= link_to "Read Now", pub.file_url.to_s, {class: "btn btn-large btn-inverse"} %>
-    
-        </div><!--/.content-left-->
-
-    	  <div class="content-right">
-
-          <a href="#" class="frame">
-            <img src="/assets/frontcover.jpg">
-          </a>
-
-    	  </div><!--/.content-right-->
-
-  	<% end %>
-
-    </div><!--/.container-->
-
-  </div><!--/#masthead-->
+</div><!--/#masthead-->
 

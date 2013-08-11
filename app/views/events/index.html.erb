@@ -2,7 +2,7 @@
 
 <div class="main">
 	<div class="row">
-		<div class="span3 sidebar">
+		<div class="span3 tabbable">
             <h2>News/Events</h2>
             <ul class="nav nav-tabs nav-stacked white-nav">
                 <li>
@@ -13,25 +13,26 @@
                 </li> 
             </ul> 
 
-        <% if signed_in? %>
-            <p><%= link_to "Add new event", new_event_path %></p>
-        <% end %>             
+            <% if signed_in? %>
+                <p><%= link_to "Add new event", new_event_path %></p>
+            <% end %>             
 
 		</div>
 
-	<div class="span9 main-container event-latest">
-        <% if @news_events %>
-        <h2>News</h2> 
-        <% else %>
-        <h2>Upcoming Events</h2> 
-        <% end %>
+    	<div class="span9 event-content">
+            <% if @news_events %>
+            <h2>News</h2> 
+            <% else %>
+            <h2>Upcoming Events</h2> 
+            <% end %>
 
 
             <% if @news_events %>
-            <%= render @news_events %>
-
+            <ul>
+                <%= render @news_events %>
+            </ul>
             <% else %>
-                
+                    
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
                 <% else %>
@@ -39,12 +40,12 @@
                 <% end %>
 
 
-        <h2 id="second">Recent Events</h2>
-
-            <%= render @past_events %>
-
-        <% end %>
-    </div>
+            <h2 id="second">Recent Events</h2>
+            <ul>
+                <%= render @past_events %>
+            </ul>
+            <% end %>
+        </div>
     </div>
 </div>
 

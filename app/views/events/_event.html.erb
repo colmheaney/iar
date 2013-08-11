@@ -1,16 +1,15 @@
-<div class="content events">
-<h5><%= event.title %></h5>
+<li>
+	<h3><%= event.title %></h3>
+	<p class="meta"><%= event.date.strftime(" %d %B %Y") %> - <%= event.location %></p>
+	<p class="body"><%= event.description.html_safe %>
+	</p>
+	<span class="timestamp">Posted <%= time_ago_in_words(event.created_at) %> ago.</span>
+	<br />
+	<br />
 
-<%= event.description.html_safe %>
-<br />
-<%= event.date.strftime(" %d %B %Y") %> 
-<% if !event.location.blank? %><span> | </span><% end %>
-<%= event.location %>
-<br />
-<br />
+	<% if signed_in? %>
+	<%= link_to 'Edit', edit_event_path(event) %>
+	<%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+</li>
 
-<% if signed_in? %>
-<%= link_to 'Edit', edit_event_path(event) %>
-<%= link_to 'delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-</div>
