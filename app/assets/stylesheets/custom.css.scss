@@ -1,6 +1,12 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+/*@font-face {
+  font-family: SourceSansPro;
+  src: url('type/SourceSansPro-Regular.otf');
+}*/
+ 
+  
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
@@ -8,6 +14,7 @@
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+
 
 /* universal */
 
@@ -19,7 +26,7 @@ body {
   padding-top: 0px;
   /*background: url("/assets/bg.gif") repeat scroll 0 0 #F6F6F6;*/
   background: #ffffff;
-  font-family: sans-serif;
+  font-family: verdana, arial, helvetica;
   color: #575757;
 }
 
@@ -39,16 +46,24 @@ textarea {
 }
 
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
+ 
+
+h1 {
+  font-size: 44px;
+  line-height: 48px;
+  color: #ffffff;
+}
 
 h2 {
   font-size: 30px;
   line-height: 34px;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   color: #999999;
   margin: 0 0 20px 0;
 }
@@ -161,15 +176,11 @@ li {
     background: #89B06C;
     border-bottom: 6px solid #FBFBFB;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    border-bottom: 6px solid #FBFBFB;
     z-index: 1;
 
 }
 
 #masthead h1 {
-    color: #FFFFFF;
-    font-weight: bold;
-    letter-spacing: -1px;
     margin-bottom: 0.75em;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
 
@@ -199,16 +210,9 @@ li {
     font-weight: bold;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
     position: absolute;
-    bottom: 10px;
-    right: -90px;
+    bottom: 7px;
+    right: -65px;
 }
-
-/*#masthead-subpage {
-
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); 
-    padding: 0px; 
-}*/
-
 
 
 li#fat-menu.dropdown > ul.dropdown-menu {
