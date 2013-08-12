@@ -10,8 +10,10 @@ class PublicationsController < ApplicationController
     end
 
     def index
-  	  @publications = Publication.paginate(page: params[:page], per_page: 5)
-      @publications = @publications.by_pubtype(params[:type]) if params[:type].present?
+  	  #@publications = Publication.paginate(page: params[:page], per_page: 5)
+      @magazines = Publication.where('pubtype = ?', 'Magazines')
+      @leaflets = Publication.where('pubtype = ?', 'Leaflets')
+      @papers = Publication.where('pubtype = ?', 'Papers')          
     end
 
   	def create

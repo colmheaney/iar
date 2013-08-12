@@ -2,49 +2,39 @@
 
 <div class="main">
 	<div class="row">
-		<div class="span3 tabbable">
-            <h2>News/Events</h2>
-            <ul class="nav nav-tabs nav-stacked white-nav">
-                <li>
-                    <%= link_to 'Events', events_path %>
-                </li>
-                <li>
-                     <%= link_to 'News', events_path(:type => 'news') %>
-                </li> 
-            </ul> 
 
-            <% if signed_in? %>
-                <p><%= link_to "Add new event", new_event_path %></p>
-            <% end %>             
-
-		</div>
-
-    	<div class="span9 event-content">
-            <% if @news_events %>
-            <h2>News</h2> 
-            <% else %>
-            <h2>Upcoming Events</h2> 
-            <% end %>
-
-
-            <% if @news_events %>
-            <ul>
-                <%= render @news_events %>
+        <div class="tabbable span3">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#tab1" data-toggle="tab">Upcoming Events</a></li>
+                <li><a href="#tab2" data-toggle="tab">Past Events</a></li>
+                <li><a href="#tab3" data-toggle="tab">News</a></li>
             </ul>
-            <% else %>
-                    
+        </div>
+
+        <% if signed_in? %>
+            <p><%= link_to "Add new event", new_event_path %></p>
+        <% end %>           
+          
+        <div class="tab-content span9 green_h3">
+            <div id="tab1" class="tab-pane active">
+                <h2>Upcoming Events</h2> 
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
                 <% else %>
                     <%= render @upcoming_events %>
-                <% end %>
+                <% end %>       
+            </div>
 
-
-            <h2 id="second">Recent Events</h2>
-            <ul>
+            <div id="tab2" class="tab-pane">
+                <h2>Recent Events</h2>
                 <%= render @past_events %>
-            </ul>
-            <% end %>
+            </div>
+        
+            <div id="tab3" class="tab-pane">
+                <h2>News</h2> 
+                <%= render @news_events %>
+            </div>
+           
         </div>
     </div>
 </div>
