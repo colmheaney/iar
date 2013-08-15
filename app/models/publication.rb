@@ -2,7 +2,7 @@ class Publication < ActiveRecord::Base
   attr_accessible :description, :title, :image, :file, :pubtype
 
   validates :title, presence: true, length: { maximum: 50 }
-  validates :description, presence: true, length: { maximum: 300 }
+  validates :description, presence: true, length: { maximum: 270 }
   validates :image, presence: true
   validates :file, presence: true
 

@@ -7,6 +7,7 @@ Iar::Application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
+  resources :publications, :path => "downloads"
   resources :publications do
     member do
       get :download

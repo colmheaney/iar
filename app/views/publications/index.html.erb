@@ -10,96 +10,75 @@
                 <li><a href="#tab2" data-toggle="tab">Leaflets</a></li>
                 <li><a href="#tab3" data-toggle="tab">Papers</a></li>
             </ul>
-        </div>
 
-        <% if signed_in? %>
-        <p><%= link_to "Add new publication", new_publication_path %></p>
-        <% end %> 
+            <% if signed_in? %>
+            <p><%= link_to "Add new publication", new_publication_path %></p>
+            <% end %> 
+
+        </div>
  
         <div class="tab-content span9">
-            <h2>Downloads</h2>
             <div id="tab1" class="tab-pane active">
-                <table class="table table-striped">
-                    <thead>
-                        <td style="width: 20%">Image</td>
-                        <td style="width: 10%">Title</td>
-                        <td style="width: 40%">Description</td>
-                        <td style="width: 30%">Actions</td>             
-                    </thead>
-                    <tbody>
-                    <% @magazines.each do |mag| %>
-                        <tr>
-                            <td><%= image_tag mag.image_url(:thumb).to_s %></td>
-                            <td><%= mag.title %></td>
-                            <td><%= mag.description %></td>
-                            <td>
-                            <%= link_to "download", download_publication_path(mag) %>
-                            | <%= link_to "view", mag.file_url.to_s %>
-                            <% if signed_in? %>
-                            | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
-                            | <%= link_to "edit", edit_publication_path(mag) %> 
-                            <% end %>
-                            </td>
-                        </tr>
+
+                <% @magazines.each do |mag| %>
+                <div class="download">                    
+                    
+                    <%= image_tag mag.image_url(:thumb).to_s %>
+                    <h3><%= mag.title %></h3>
+                    <p><%= mag.description %></p>
+                    
+                    <p><%= link_to "download", download_publication_path(mag) %>
+                    | <%= link_to "view", mag.file_url.to_s %>
+                    <% if signed_in? %>
+                    | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
+                    | <%= link_to "edit", edit_publication_path(mag) %> </p>
                     <% end %>
-                    </tbody>
-                </table>
-            </div>
+                       
+                </div>
+                        
+                <% end %>
+
+             </div>
+
 
             <div id="tab2" class="tab-pane">
-                <table class="table table-striped">
-                    <thead>
-                        <td style="width: 20%">Image</td>
-                        <td style="width: 10%">Title</td>
-                        <td style="width: 40%">Description</td>
-                        <td style="width: 30%">Actions</td>             
-                    </thead>
-                    <tbody>
-                    <% @leaflets.each do |mag| %>
-                        <tr>
-                            <td><%= image_tag mag.image_url(:thumb).to_s %></td>
-                            <td><%= mag.title %></td>
-                            <td><%= mag.description %></td>
-                            <td>
-                            <%= link_to "download", download_publication_path(mag) %>
-                            | <%= link_to "view", mag.file_url.to_s %>
-                            <% if signed_in? %>
-                            | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
-                            | <%= link_to "edit", edit_publication_path(mag) %> 
-                            <% end %>
-                            </td>
-                        </tr>
+                <% @leaflets.each do |mag| %>
+                <div class="download">                    
+                    
+                    <%= image_tag mag.image_url(:thumb).to_s %>
+                    <h3><%= mag.title %></h3>
+                    <p><%= mag.description %></p>
+                    
+                    <p><%= link_to "download", download_publication_path(mag) %>
+                    | <%= link_to "view", mag.file_url.to_s %>
+                    <% if signed_in? %>
+                    | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
+                    | <%= link_to "edit", edit_publication_path(mag) %> </p>
                     <% end %>
-                    </tbody>
-                </table>
+                       
+                </div>
+                        
+                <% end %>
             </div>
 
             <div id="tab3" class="tab-pane">
-                <table class="table table-striped">
-                    <thead>
-                        <td style="width: 20%">Image</td>
-                        <td style="width: 10%">Title</td>
-                        <td style="width: 40%">Description</td>
-                        <td style="width: 30%">Actions</td>             
-                    </thead>
-                    <tbody>
-                    <% @papers.each do |mag| %>
-                        <tr>
-                            <td><%= image_tag mag.image_url(:thumb).to_s %></td>
-                            <td><%= mag.title %></td>
-                            <td><%= mag.description %></td>
-                            <td>
-                            <%= link_to "download", download_publication_path(mag) %>
-                            | <%= link_to "view", mag.file_url.to_s %>
-                            <% if signed_in? %>
-                            | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
-                            | <%= link_to "edit", edit_publication_path(mag) %> 
-                            <% end %>
-                            </td>
-                        </tr>
+                <% @papers.each do |mag| %>
+                <div class="download">                    
+                    
+                    <%= image_tag mag.image_url(:thumb).to_s %>
+                    <h3><%= mag.title %></h3>
+                    <p><%= mag.description %></p>
+                    
+                    <p><%= link_to "download", download_publication_path(mag) %>
+                    | <%= link_to "view", mag.file_url.to_s %>
+                    <% if signed_in? %>
+                    | <%= link_to "delete", mag, method: :delete, data: { confirm: "You sure?" } %>     
+                    | <%= link_to "edit", edit_publication_path(mag) %> </p>
                     <% end %>
-                    </tbody>
-                </table>
+                       
+                </div>
+                        
+                <% end %>
             </div>                        
         </div>            
 	</div>

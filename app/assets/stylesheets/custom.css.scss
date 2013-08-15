@@ -102,6 +102,11 @@ li {
 
 #headsocial li {
     display: inline;
+
+}
+
+#headsocial a {
+  outline: 0;
 }
 
 #headsocial img {
@@ -240,7 +245,7 @@ li#fat-menu.dropdown > ul.dropdown-menu {
   margin-bottom:20px;
 }
 
-.green_h3 h3{
+.green_h2 h2{
   color: #89B06C;
 } 
 
@@ -445,4 +450,18 @@ footer a {
     } 
 }
 
+/* downloads */
+.download {
+  width:400px;
+  float: left;
+  margin: 0 25px 25px 0;
+}
+
+.download img {
+  float: left;
+}
+.download h3, .download p {
+  float: right;
+  width: 195px;
+}
 

@@ -9,15 +9,15 @@
                 <li><a href="#tab2" data-toggle="tab">Past Events</a></li>
                 <li><a href="#tab3" data-toggle="tab">News</a></li>
             </ul>
-        </div>
 
-        <% if signed_in? %>
-            <p><%= link_to "Add new event", new_event_path %></p>
-        <% end %>           
-          
-        <div class="tab-content span9 green_h3">
+            <% if signed_in? %>
+                <p><%= link_to "Add new event", new_event_path %></p>
+            <% end %> 
+            
+        </div>
+         
+        <div class="tab-content span9 green_h2">
             <div id="tab1" class="tab-pane active">
-                <h2>Upcoming Events</h2> 
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
                 <% else %>
@@ -26,12 +26,10 @@
             </div>
 
             <div id="tab2" class="tab-pane">
-                <h2>Recent Events</h2>
                 <%= render @past_events %>
             </div>
         
             <div id="tab3" class="tab-pane">
-                <h2>News</h2> 
                 <%= render @news_events %>
             </div>
            
