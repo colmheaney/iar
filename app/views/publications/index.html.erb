@@ -17,13 +17,13 @@
 
         </div>
  
-        <div class="tab-content span9">
+        <div class="download-content tab-content span9">
             <div id="tab1" class="tab-pane active">
 
                 <% @magazines.each do |mag| %>
                 <div class="download">                    
                     
-                    <%= image_tag mag.image_url(:thumb).to_s %>
+                    <a href=<%= mag.file_url().to_s %>><%= image_tag mag.image_url(:thumb).to_s %></a>
                     <h3><%= mag.title %></h3>
                     <p><%= mag.description %></p>
                     
@@ -44,8 +44,8 @@
             <div id="tab2" class="tab-pane">
                 <% @leaflets.each do |mag| %>
                 <div class="download">                    
-                    
-                    <%= image_tag mag.image_url(:thumb).to_s %>
+
+                    <a href=<%= mag.file_url().to_s %>><%= image_tag mag.image_url(:thumb).to_s %></a>
                     <h3><%= mag.title %></h3>
                     <p><%= mag.description %></p>
                     
@@ -65,7 +65,7 @@
                 <% @papers.each do |mag| %>
                 <div class="download">                    
                     
-                    <%= image_tag mag.image_url(:thumb).to_s %>
+                    <a href=<%= mag.file_url().to_s %>><%= image_tag mag.image_url(:thumb).to_s %></a>
                     <h3><%= mag.title %></h3>
                     <p><%= mag.description %></p>
                     

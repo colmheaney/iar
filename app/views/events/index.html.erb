@@ -37,3 +37,16 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        var url = document.location.toString();
+        if (url.match('#')) {
+          id = (url.split('#')[1]);
+        }  
+
+        var tab = document.getElementById(id).parentNode.getAttribute('id');
+        $('.nav-pills a[href=#'+tab+']').tab('show')
+    });
+
+</script>
+
