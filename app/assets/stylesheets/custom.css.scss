@@ -24,8 +24,11 @@ html {
 
 body {
   padding-top: 0px;
-  /*background: url("/assets/bg.gif") repeat scroll 0 0 #F6F6F6;*/
-  background: #ffffff;
+  background-image: url("/assets/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100%;
+  /*background: #ffffff;*/
   font-family: arial, helvetica;
   color: #575757;
 }
@@ -193,7 +196,7 @@ li {
 
 #masthead {
     background: #89b06c;
-    border-bottom: 14px solid #A3C28E;
+    border-bottom: 10px solid #A3C28E;
     /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);*/
     z-index: 1;
 
@@ -308,6 +311,7 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 
 .nav {
   background: #eeeeee;
+
 }
 
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
@@ -350,11 +354,14 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 
 #magazine {
     background-color: #eeeeee;  
+    height: 180px;
+
 }
 
 #magazine img {
   width: 190px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
 }
 
 #magazine h3 {
@@ -449,13 +456,6 @@ input {
   margin-left: 0;
 }
 
-    
-#map_canvas {
-  width: 100%;
-  height: 300px;
-}
-
-
 #error_explanation {
   color: #f00;
   ul {
@@ -540,6 +540,7 @@ footer a {
 .tabs {
   background-color: #eeeeee;
   padding: 0 0 0 0px;
+
 }
 
 #twitter div {
@@ -575,11 +576,11 @@ footer a {
 
 #tabHeadings li:hover {
   background-color: #e3e3e3;
+
 }
 
 #tabHeadings li {
     position: relative;
-    background: #ffffff
 }
 
 #tabHeadings li.fb_icon a span {
