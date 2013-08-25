@@ -1,12 +1,11 @@
-<li>
+<li class="col-1-3">
 	<h3>
 		<a href=/events/#<%= event_excerpt.id %>><%= event_excerpt.title %></a>
 	</h3>
 
-	<ul class="meta">
-		<li><%= event_excerpt.date.strftime(" %d %B %Y") %></li>
-		<li><%= event_excerpt.location %></li>
-	</ul>
+	<p class="meta">
+		<%= event_excerpt.date.strftime(" %d %B %Y") %> / <%= event_excerpt.location %>
+	</p>
 	<p class="body"><%= raw event_excerpt.description.truncate(200, :separator => ' ', :omission => "...#{link_to " (read more)", events_path.to_s + "/#" + event_excerpt.id.to_s}") %></p>	
 	<span class="timestamp">Posted <%= time_ago_in_words(event_excerpt.created_at) %> ago.</span>
 </li>

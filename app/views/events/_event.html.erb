@@ -1,9 +1,6 @@
 <li id=<%= event.id %>>
 	<h2><%= event.title %></h2>
-	<ul class="meta">
-		<li><%= event.date.strftime(" %d %B %Y") %></li>
-		<li><%= event.location %></li>
-	</ul>
+	<p class="meta"><%= event.date.strftime(" %d %B %Y") %> / <%= event.location %></p>
 <!-- 	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FIrishArchaeologicalResearchike&amp;width=450&amp;height=46&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;send=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:22px;" allowTransparency="true"></iframe> -->
 	
 	<p class="body"><%= event.description.html_safe %></p>

@@ -8,18 +8,35 @@
   	<%= render 'layouts/shim' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
+  <% current_uri = request.env['PATH_INFO'] %>
+  <% case current_uri
+     when '/' %>
+     <body class="home">
+  <% when '/about' %>
+    <body class="about">
+  <% when '/contact' %>
+    <body class="contact">
+  <% when '/aerial-services' %>
+    <body class="aerial">
+  <% when '/community-archaeology' %>
+    <body class="community">
+  <% when '/downloads' %>
+    <body class="downloads">    
+  <% when '/pop-up-museum' %>
+    <body class="pop-up">   
+  <% when '/education' %>
+    <body class="education"> 
+  <% when '/events' %>
+    <body class="events"> 
+  <% else %>
+    <body>                            
+  <% end %>
     <%= render 'layouts/header' %> 
-    <% if current_page?('/contact') %>
-      <div id="map_canvas"></div>
-    <% end %>     
-    <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
       <!--<%= debug(params) if Rails.env.development? %>-->
       <%= render 'layouts/footer' %>
-    </div>
   </body>
 </html>

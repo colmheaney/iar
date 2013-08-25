@@ -1,42 +1,37 @@
 <% provide(:title, 'Contact Us') %>
 
-<div class="main">
+<div class="grid">
   <div class="row">
 
     <%= form_for(@message) do |f| %>    
     <%= render 'shared/error_messages', object: f.object %>
 
-    <div class="span6 form">
-      <h2>Contact Us</h2>
+    <div class="col-2-3 form">
       <div>
-        <div>
+        <div class="col-1-2">
           <%= f.text_field :name, :placeholder => 'Name' %>
         </div>
-        <div>
+        <div class="col-1-2">
           <%= f.text_field :email,  :placeholder => 'Email'  %>
         </div>
-        <div>
+        <div class="col-1-1">
           <%= f.text_area :content, :rows => 5, :placeholder => 'Message'  %>
         </div>
-        <div><%= f.submit "Send", :class => 'btn btn-inverse btn-large'  %>
+        <div class="col-1-8"><%= f.submit "Send", :class => 'pointer'  %>
         </div>          
       </div>
     </div>
 
-    <div class="span3 tab-content">
-      <h2>Contact Details</h2>
+    <section id="details" class="col-1-5">
       <p>Irish Archaelogical Research</p>
       <p>47 Olympia Drive</p>
       <p>Belfast</p>
       <p>BT12 6NG</p>
       <br />
+      <p>8am-4pm, Monday-Friday</p>
       <p>Phone: 02890501769</p>
       <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
-    </div> 
-
-    <div class="span3 tab-content">
-      <h2>Opening Hours</h2>
-      <p>8am-4pm, Monday-Friday</p>
+    </section> 
 
     <% end %>
 

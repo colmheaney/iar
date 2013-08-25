@@ -1,48 +1,34 @@
-<% provide(:title, 'About Us') %>
+<div class="grid">
+	<div class="row">
 
-<div class="main main-container">
+		<%= render 'nav' %>		
+		
+	  	<section class="tab col-2-3">
+	        <p>IAR is run by Gavin Donaghy, Ross Bailey and Lianne Heaney, qualified archaeologists with many years of experience in commercial archaeology sector. </p>
 
-	<blockquote>
-		<h2>Bringing our local heritage to the world</h2>
-	</blockquote>
+	        <h3>Gavin Donaghy</h3>
+      		<p>Gavin is a graduate of the University of Ulster Jordanstown. He started his working life in the IT sector, but then decided to follow his dream of becoming an archaeologist and began working in commercial archaeology as a field archaeologist, working his way up to a licensed archaeological site director in 2009. Gavin has a vast amount of experience on numerous archaeological site types and has a great passion for new technology and how it can add to our appreciation of archaeological sites. Gavin heads up our educational outreach department and our aerial photographic surveys.</p>
 
-	<div class="row about-us">
-		<!-- row of 4 thumbnails -->
-		<div class="span2">
-		</div>
-		<div class="span2">
-			<a href="#">
-					<img src="http://placehold.it/160x140" />
-				</a>
-				<p>Lorem ipsum voluptate voluptate fugiat commodo id reprehenderit incididunt ut ut ad aliquip et nulla in Excepteur. Lorem ipsum reprehenderit irure elit adipisicing sint Ut deserunt ex. Lorem ipsum eu ea dolore anim est et et fugiat laborum aute.</p>
-		</div>
-		<div class="span2">
-			<a href="#">
-					<img src="http://placehold.it/160x140" />
-				</a>
-				<p>Lorem ipsum voluptate voluptate fugiat commodo id reprehenderit incididunt ut ut ad aliquip et nulla in Excepteur. Lorem ipsum reprehenderit irure elit adipisicing sint Ut deserunt ex. Lorem ipsum eu ea dolore anim est et et fugiat laborum aute.</p>
-		</div>
-		<div class="span2">
-			<a href="#">
-					<img src="http://placehold.it/160x140" />
-				</a>
-				<p>Lorem ipsum voluptate voluptate fugiat commodo id reprehenderit incididunt ut ut ad aliquip et nulla in Excepteur. Lorem ipsum reprehenderit irure elit adipisicing sint Ut deserunt ex. Lorem ipsum eu ea dolore anim est et et fugiat laborum aute.</p>
-		</div>
-		<div class="span2">
-			<a href="#">
-					<img src="http://placehold.it/160x140" />
-				</a>
-				<p>Lorem ipsum voluptate voluptate fugiat commodo id reprehenderit incididunt ut ut ad aliquip et nulla in Excepteur. Lorem ipsum reprehenderit irure elit adipisicing sint Ut deserunt ex. Lorem ipsum eu ea dolore anim est et et fugiat laborum aute.</p>
-		</div>		
-	</div>
+      		<h3>Ross Bailey</h3>
+      		<p>Ross is a graduate from Queens University Belfast in archaeology and has worked as a field archaeologist and impact assessment researcher dealing with planning issues since 2006. Ross has experience of working on many different archaeological sites and researching the history of those sites. His current research interests include recreating prehistoric technology, with a critical view of functionality, particularly regarding prehistoric archery and hunting, and historical European martial arts and techniques as laid out in surviving period manuals.</p>
 
-	<div id="about-btn">
-		<center><a class="btn btn-large btn-inverse" href="/contact">Contact Us</a></center>
-	</div>
+      		<h3>Lianne Heaney</h3>
+			<p>Lianne is a graduate from Queens University Belfast and University of Ulster Coleraine in archaeology. She has worked in the commercial archaeology sector since 2002 making her way up the ranks from a field archaeologist to licensed site director and then post-excavation manger and business manager of one the biggest commercial archaeological consultancy’s in Northern Ireland. Lianne currently oversees the admin side of the company.</p>
 
-</div>
+			<h3>Volunteers</h3>
+			<p>On occasion when we are particularly busy, we use volunteers to help us on various projects. All our volunteers are qualified archaeologists and hold CBR certificates.</p>
+		</section><!-- /.tabpane -->
+	</div><!-- end of main content row -->
 
+	<div class="row">
+		<%= render 'events' %>
+	</div><!-- end of event row -->
 
+	<div class="row">
+		<%= render 'others' %>
+	</div><!-- end of row 3 -->
+</div><!-- end of main -->
 
+<%= render 'social-script' %> 
 
 

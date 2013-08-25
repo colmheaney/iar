@@ -1,5 +1,27 @@
-<footer class="footer">
+<b id="te" class="welcome"></b>
+<b id="be" class="welcome"></b>
+<b id="le" class="welcome"></b>
+<b id="re" class="welcome"></b> 
+
+<footer class="col-2-3">
   <small>
-    Designed and developed by Colm Heaney using <%= link_to 'Bootstrap', 'http://twitter.github.com/bootstrap/', {id: "bootstrap-link"} %>
+    Designed and developed by Colm Heaney
   </small>
 </footer>
+
+
+
+
+<script type="text/javascript">
+jQuery(function ($) {
+  // Load dialog on page load
+  //$('#basic-modal-content').modal();
+
+  // Load dialog on click
+  $('#basic-modal .basic').click(function (e) {
+    $('#basic-modal-content').modal();
+
+    return false;
+  });
+});
+</script>

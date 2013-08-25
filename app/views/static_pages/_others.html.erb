@@ -1,0 +1,49 @@
+<section class="col-2-3 other">
+	<section class="col-1-2">
+
+	    <ul id="tabHeadings">
+	        <li class="selected fb_icon col-1-2">
+	        	<a href="#facebook">
+					<span></span>
+	            	Facebook
+	        	</a>
+	        </li>
+	        <li class="twitter_icon col-1-2">
+	           	<a href="#twitter">
+		           	<span></span> 
+		           	Twitter
+	           	</a>
+	        </li>
+	    </ul>
+        <section class="tabs">
+	 		
+	 		<ul>
+		 		<li id="facebook">
+			 		<h3>Facebook</h3>
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FIrishArchaeologicalResearch&amp;width=280&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:280px; height:258px;" allowTransparency="true"></iframe>						
+	 			</li>
+	 			<li id="twitter">
+			        <h3>Twitter</h3>
+			        <div>
+						<a class="twitter-timeline" height="258" href="https://twitter.com/ColmJHeaney" data-link-color="#0099E6" data-chrome="nofooter transparent, noheader transparent" data-widget-id="368434257510674432">Tweets by @ColmJHeaney</a>
+			        </div>
+	 			</li>
+	 		</ul>
+   		</section><!-- end of tabs -->
+	</section><!-- end of social section -->
+
+	<section class="col-1-2">
+	    <% @publication.each do |mag| %>
+	    <div id="magHeading">
+			<p>Digital Magazine</p>
+	    </div>
+		<div id="magazine">
+			<h3><%= mag.title %> is out now!</h3>
+			<a href=<%= mag.file_url().to_s %>>		        
+	            <img src="/assets/front_page/frontcover.png">
+	            	<!-- image_tag mag.image_url(:thumb).to_s -->
+			</a>
+		</div><!-- end of mag section -->
+	    <% end %>
+	</section>
+</section><!-- end of col-2-3 -->

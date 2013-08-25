@@ -15,6 +15,10 @@ Iar::Application.routes.draw do
   end
   
   match '/about',   to: 'static_pages#about'
+  match '/education',   to: 'static_pages#education'
+  match '/pop-up-museum',   to: 'static_pages#popup'
+  match '/community-archaeology',   to: 'static_pages#community'
+  match '/aerial-services',   to: 'static_pages#aerial'
   match '/contact', to: 'messages#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete

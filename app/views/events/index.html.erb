@@ -1,23 +1,21 @@
 <%= provide(:title, 'News/Events') %>
 
-<div class="main">
+<div class="grid">
 	<div class="row">
 
-        <div class="tabbable span3">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#tab1" data-toggle="tab">Upcoming Events</a></li>
-                <li><a href="#tab2" data-toggle="tab">Past Events</a></li>
-                <li><a href="#tab3" data-toggle="tab">News</a></li>
+        <nav id="main_nav" class="col-1-5">
+            <ul>
+                <li class="selected" id="option1"><a href="#tab1">Upcoming Events</a></li>
+                <li id="option2"><a href="#tab2">Past Events</a></li>
+                <li id="option3"><a href="#tab3">News</a></li>
             </ul>
-
             <% if signed_in? %>
-                <p><%= link_to "Add new event", new_event_path %></p>
+            <p><%= link_to "Add new event", new_event_path %></p>
             <% end %> 
-            
-        </div>
+        </nav>
          
-        <div class="tab-content span9 green_h2">
-            <div id="tab1" class="tab-pane active">
+        <section class="tabpane col-2-3 event">
+            <div id="tab1" class="tab">
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
                 <% else %>
@@ -25,28 +23,44 @@
                 <% end %>       
             </div>
 
-            <div id="tab2" class="tab-pane">
+            <div id="tab2" class="tab">
                 <%= render @past_events %>
             </div>
         
-            <div id="tab3" class="tab-pane">
+            <div id="tab3" class="tab">
                 <%= render @news_events %>
             </div>
            
-        </div>
+        </section>
     </div>
 </div>
 
 <script type="text/javascript">
+
     $(document).ready(function() {
         var url = document.location.toString();
         if (url.match('#')) {
           id = (url.split('#')[1]);
+          $('.tab').hide();
+          var tab = document.getElementById(id).parentNode.getAttribute('id');
+          $('#'+tab).show();
+          $('.selected').removeClass('selected');
+          li = $('a[href=#'+tab+']').parent();
+          li.addClass('selected');
+          color = li.css('border-left-color');
+          $('b').css("background", color);
+          $('#header_nav li.active').css("background", color);
+          $('.tab, .event-excerpt, .event > div > li, .other, #masthead').css("border-bottom-color", color);
+          $('#tabHeadings .selected, #magHeading').css("border-left-color", color);
+          $('em').css("color", color);
         }  
-
-        var tab = document.getElementById(id).parentNode.getAttribute('id');
-        $('.nav-pills a[href=#'+tab+']').tab('show')
+        else {
+            $('.tab').hide();
+            $('#tab1').show();
+        }
     });
 
 </script>
+
+<%= render partial: 'shared/switching_script' %>
 

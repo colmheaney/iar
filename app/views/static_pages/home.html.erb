@@ -1,268 +1,30 @@
-
-<script> document.documentElement.className = 'js'; </script>
-<div class="main">
+<div class="grid">
 	<div class="row">
+
+		<%= render 'nav' %>		
 		
-		<div class="tabbable span3">
-	  		<ul class="nav nav-pills nav-stacked">
-			    <li class="active"><a href="#tab1" data-toggle="tab">Welcome</a></li>
-			    <li><a href="#tab2" data-toggle="tab">About</a></li>
-			    <li><a href="#tab3" data-toggle="tab">Education</a></li>
-			    <li><a href="#tab4" data-toggle="tab">Pop-up Museum</a></li>
-			    <li><a href="#tab5" data-toggle="tab">Community Archaeology</a></li>
-			    <li><a href="#tab6" data-toggle="tab">Aerial Services</a></li>		    
-	  		</ul>
+	  	<section class="col-2-3 tab">
+      		<img class="col-3-4" src="/assets/front_page/girl-walking-past-table.jpg" />
 
-	  		<section>
-		        <ul class="rounded" id="tabHeadings">
-		            <li class="selected fb_icon">
-		            	<a href="#facebook">
-							<span> </span>
-			            	Facebook
-		            	</a>
-		            </li>
-		            <li class="twitter_icon">
-		               	<a href="#twitter">
-				           	<span> </span> 
-				           	Twitter
-		               	</a>
-		            </li>
-		        </ul>
-		        
-		        <section class="tabs">
-			 		
-			 		<ul>
-				 		<li id="facebook">
-					 		<h3>Facebook</h3>
-							<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FIrishArchaeologicalResearch&amp;width=280&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:280px; height:258px;" allowTransparency="true"></iframe>						
-			 			</li>
-			 			<li id="twitter">
-					        <h3>Twitter</h3>
-					        <div>
-								<a class="twitter-timeline" height="258" href="https://twitter.com/ColmJHeaney" data-link-color="#0099E6" data-chrome="nofooter transparent, noheader transparent" data-widget-id="368434257510674432">Tweets by @ColmJHeaney</a>
-					        </div>
-			 			</li>
-			 		</ul>
-	       		</section>
-	        </section>
+			<p >IAR is the first home-grown archaeological heritage consultancy based in Northern Ireland with specific emphases on education and public participation in archaeology. We work with schools, community groups, heritage trusts, local councils and local government bodies in the education and promotion of local archaeology.</p>
 
-            <% @publication.each do |mag| %>
-	        <div class="rounded" id="magHeading">
-				<p>Digital Magazine</p>
-	        </div>
-			<div id="magazine">
-				<h3><%= mag.title %> is out now!</h3>
-				<a href=<%= mag.file_url().to_s %>>		        
-		            <img src="/assets/front_page/frontcover.png">
-	                	<!-- image_tag mag.image_url(:thumb).to_s -->
-				</a>
-			</div>
-            <% end %>
+			<h3 class="row">Our Aim</h3>
+			<p>Our aim is to promote local heritage by engaging local communities with their heritage through public engagement	events and school outreach programmes. We want to create connections and build infrastructures that can start to explore the rich archaeological heritage that is all around our communities.</p>
 
-		</div>
-		  
-	  	<div class="tab-content span6">
-	    	<div id="tab1" class="tab-pane active">
+			<h3>Shared Heritage</h3>
+			<p>We at IAR are constantly evolving and improving our approach to the way teach and demonstrate our archaeological	heritage. We strive to give the best service possible, to help build more bridges between communities based on our shared archaeological heritage - which stretches back 10,000 years.</p>
+		</section><!-- /.tabpane -->
+	</div><!-- end of main content row -->
 
-				<h2>Welcome to IAR</h2>
+	<div class="row">
+		<%= render 'events' %>
+	</div><!-- end of event row -->
 
-	    		<section class="image-right">
-	    			<img src="/assets/front_page/schools2.jpg">
-					<p>IAR is the first home-grown archaeological heritage consultancy based in Northern Ireland with specific emphases on education and public participation in archaeology. We work with schools, community groups, heritage trusts, local councils and local government bodies in the education and promotion of local archaeology.</p>
-	    		</section>
+	<div class="row">
+		<%= render 'others' %>
+	</div><!-- end of row 3 -->
+</div><!-- end of main -->
 
-				<h3 class="clear">Our Aim</h3>
-				<section class="image-left">	
-	    			<img src="/assets/front_page/archery.jpg" />
-					<p>Our aim is to promote local heritage by engaging local communities with their heritage through public engagement	events and school outreach programmes. We want to create connections and build infrastructures that can start to explore the rich archaeological heritage that is all around our communities.</p>
-	    		</section>
+<%= render 'social-script' %> 
 
-				<h3 class="clear">Shared Heritage</h3>
-	    		<section class="image-right">
-					<p>We at IAR are constantly evolving and improving our approach to the way teach and demonstrate our archaeological	heritage. We strive to give the best service possible, to help build more bridges between communities based on our shared archaeological heritage - which stretches back 10,000 years.</p>
 
-					<img src="/assets/front_page/inch-abbey.jpg" />
-	    		</section>
-
-	    	</div>
-	    
-	    	<div id="tab2" class="tab-pane">
-
-				<h2>About Us</h2>
-
-	    		<section>
-			        <p>IAR is run by Gavin Donaghy, Ross Bailey and Lianne Heaney, qualified archaeologists with many years of experience in commercial archaeology sector. </p>
-	    		</section>
-
-		        <h3>Gavin Donaghy</h3>
-	    		<section>
-		      		<p>Gavin is a graduate of the University of Ulster Jordanstown. He started his working life in the IT sector, but then decided to follow his dream of becoming an archaeologist and began working in commercial archaeology as a field archaeologist, working his way up to a licensed archaeological site director in 2009. Gavin has a vast amount of experience on numerous archaeological site types and has a great passion for new technology and how it can add to our appreciation of archaeological sites. Gavin heads up our educational outreach department and our aerial photographic surveys.</p>
-	    		</section>
-
-	      		<h3>Ross Bailey</h3>
-	    		<section>
-		      		<p>Ross is a graduate from Queens University Belfast in archaeology and has worked as a field archaeologist and impact assessment researcher dealing with planning issues since 2006. Ross has experience of working on many different archaeological sites and researching the history of those sites. His current research interests include recreating prehistoric technology, with a critical view of functionality, particularly regarding prehistoric archery and hunting, and historical European martial arts and techniques as laid out in surviving period manuals.</p>
-	    		</section>
-
-	      		<h3>Lianne Heaney</h3>
-	    		<section>
-					<p>Lianne is a graduate from Queens University Belfast and University of Ulster Coleraine in archaeology. She has worked in the commercial archaeology sector since 2002 making her way up the ranks from a field archaeologist to licensed site director and then post-excavation manger and business manager of one the biggest commercial archaeological consultancy’s in Northern Ireland. Lianne currently oversees the admin side of the company.</p>
-	    		</section>
-
-				<h3>Volunteers</h3>
-	    		<section>
-					<p>On occasion when we are particularly busy, we use volunteers to help us on various projects. All our volunteers are qualified archaeologists and hold CBR certificates.</p>
-	    		</section>
-
-	    	</div>
-
-	    	<div id="tab3" class="tab-pane">
-
-				<h2>Education</h2>
-
-	    		<section class="image-center">
-					<img src="/assets/front_page/schools.jpg">
-
-		      		<p>We work with primary and post primary schools, after schools programmes, holiday schemes and community groups. We have developed a series of archaeology talks and workshops that complement and integrate with the teaching curriculum in both Northern Ireland and the Republic of Ireland. Our workshops incorporate visual presentations, excavations, surveys and hands-on interaction with genuine and replica artefacts and assessing the lives of ancient people through careful examination of the material they left behind. Our educational programme guides, motivates and encourage children to draw together diverse threads of evidence in order to give relevance to everyday objects, places and landscapes.</p>
-	    		</section>
-
-	      		<h3>Curriculum</h3>
-
-	    		<section class="image-right">
-					<img src="/assets/front_page/boy-holding-item.jpg" />
-
-					<p>Archaeology incorporates a huge range of school curriculum subjects including history, geography, science and art. Whatever your learning objective we can provide a unique educational experience that will be enjoyed by teacher and pupil alike.</p>
-				</section>
-
-				<h3 class="clear">In the Classroom</h3>
-				<section>
-					<p>Our archaeologists will go out to your school and can give a talk to the whole school or a single class, we have numerous classroom based workshops that engage and intrigue your kids, they will get to talk with archaeologists, learning how they investigate the past and learn about our ancestors from prehistoric periods right up to the post-medieval period.</p>
-
-					<p>We are currently the educational heritage outreach partner for the St. Patrick Centre in Downpatick with the remit to proved outreach on the aspect of early Christianity to schools in the area.</p>
-	    		</section>
-
-				<h3>Get in Touch</h3>
-	    		<section>
-					<p>If you would like one of our archaeologists to visit your school please <a href="/contact">contact us</a> to see what we can offer you.</p>
-	    		</section>
-
-	    	</div>
-
-	    	<div id="tab4" class="tab-pane">
-
-				<h2>Pop-up Museum</h2>
-
-	    		<section class="image-center">
-					<img src="/assets/front_page/pop-up-museum.jpg">
-
-			        <p>Public engagement is a big part of what we at IAR are about, it is a great way of letting people know about the archaeology in their immediate surroundings as well as informing them on the archaeology, monument and history of Northern Ireland and on the isle as a whole and how our story fits into the wider global view.</p>
-	    		</section>
-
-		        <h3>Innovation</h3>
-	    		<section class="image-left">
-
-	    			<img src="/assets/front_page/boy-holding-sword.jpg">
-					<p>We have launched an innovative, hands-on, heritage scheme called The Pop-Up Museum. The pop-up museum will display the artefacts found during archaeological investigations around the country and enable people to interact with them, the pop-up museum it can be housed indoors or outdoors in its own marquee.</p>
-	    		</section>
-
-				<h3 class="clear">Engaging with the Public</h3>
-	    		<section>
-					<p>Public engagement is a great way of getting your theme or topic across to the public. We can and have taken part in numerous public engagement events for festivals, councils, local monuments, community groups, schools and commercial companies. If you would like a fun, colourful, unique and educational addition to your event please <a href="/contact">contact us</a> for a quote, we can tailor the museum to suit your event or theme.</p>
-	    		</section>
-
-        	</div>
-
-        	<div id="tab5" class="tab-pane">
-
-				<h2>Community Archaeology</h2>
-
-        		<section class="image-right">
-		      		<img src="/assets/front_page/girl-walking-past-table.jpg" />
-
-		      		<p>IAR work with a number of heritage and community groups helping them to develop archaeological and heritage projects that can be put in place across our shared spaces in Northern Ireland for the benefit of local residents as well as building on the ‘Heritage Tourism’ element. </p>
-
-        		</section>
-
-      			<h3 class="clear">Providing Advice</h3>
-        		<section>
-					<p>We have vast amount of untapped archaeological and heritage resources in Northern Ireland that no one outside the local area knows about. IAR can provide advice and guidance to local community groups and heritage trusts that are trying to open up and development these hidden gems to the wider world and in so doing, putting them on the tourist trial and brining increased revenue to their area. </p>
-        		</section>
-
-				<h3>It's for Everyone!</h3>	
-        		<section class="image-center">
-					<img src="/assets/front_page/green-island.jpg" />  
-
-					<p>Archaeology isn’t just for the "stuffy professor" types, its for everyone, we have a shared past that spans the millennia and by learning about our ancestors we may more readily accept our shared future on this little piece of land. Community archaeology has already taken great strides in England, Scotland and Wales, however we in Northern Ireland haven’t been as hands-on as other areas. IAR can help your group take that step forward and engage your community with its local archaeological heritage.</p>
-        		</section>
-
-        	</div>	
-
-        	<div id="tab6" class="tab-pane">
-
-				<h2>Aerial Services</h2>
-
-        		<section class="image-center">
-					<img src="/assets/front_page/grianan.jpg">
-
-		      		<p><a href="/contact">Contact us</a> for further details if you would like to hire this service.</p>
-        		</section>
-
-	    	</div> 
-
-		</div><!-- /.tab-content -->
-
-		<div class="span3 event-content">
-			<h2>News/Events</h2>
-			<ul>
-				<%= render partial: 'shared/event_excerpt', collection: @event_excerpts %>
-			</ul>
-			<p><a href="/events">View all events...</a></p>
-		</div>
-	</div>
-</div>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-</script>
-
-<script type="text/javascript">
-var Site = {
-	init : function() {
-		this.tabs();	
-	},
-	
-	tabs : function() {
-		var tabs = $('.tabs'),
-			lis = tabs.find('li'),
-			tabHeadings = $('#tabHeadings');
-
-		// listen for heading clicks
-		tabHeadings
-			.delegate('li', 'click', function(e) {
-				var li = $(this),
-					hash;
-			
-				// change the selected class to the selected one
-				li
-					.siblings()
-						.removeClass('selected')
-						.end()
-						.addClass('selected');
-					
-				// grab the hash of the anchor
-				hash = li.children('a').attr('href');
-				console.log(lis);
-				// show corresponding section
-				lis
-					.hide()
-					.filter(hash)
-						.fadeIn(500);
-						
-				e.preventDefault();
-			});
-		
-	}
-}
-
-// Let's roll!
-Site.init();
-</script>
