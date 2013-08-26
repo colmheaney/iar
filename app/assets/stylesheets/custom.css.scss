@@ -251,14 +251,16 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 #masthead {
   border-bottom: 2px dotted #625081; 
   position: relative;
+  padding-bottom: 20px;
 }
 
 #masthead img {
   height: 180px;
+  margin: 10px 0 0 0;
 }
 #masthead div {
   position: absolute;
-  top:30px;
+  top:40px;
   left:60px;
   font-family: "Andale Mono", AndaleMono, monospace;
 }
