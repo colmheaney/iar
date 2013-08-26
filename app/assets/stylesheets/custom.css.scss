@@ -268,7 +268,10 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 }
 .blurb {
   font-size: 24px;
-  line-height: 36px;  
+  line-height: 36px; 
+  padding-bottom: 25px;
+  border-bottom: 2px dotted #625081; 
+  margin-bottom: 40px;
 }  
 .blurb em {
   font-style: normal;
