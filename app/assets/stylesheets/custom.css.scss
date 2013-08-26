@@ -116,14 +116,15 @@ h2 {
   padding: 40px 0 0 0;
 }
 h3 {
-  font-size: 1.17em;
-  line-height: 1.3em;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: bold;
   color: #948b96;
   margin: 30px 0 0 0;
 }
 p {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 30px;
 }
 a {
   text-decoration: none;
@@ -261,9 +262,18 @@ li#fat-menu.dropdown > ul.dropdown-menu {
   left:60px;
   font-family: "Andale Mono", AndaleMono, monospace;
 }
-em {
+.logo {
   font-style: normal;
   color: $tab_border;
+}
+.blurb {
+  font-size: 24px;
+  line-height: 36px;  
+}  
+.blurb em {
+  font-style: normal;
+  font-weight: bold;
+  color: #625081;
 }
 #main_nav {
   position: fixed;
@@ -324,7 +334,25 @@ em {
 .aerial .tab, .aerial .event-excerpt, .aerial .other, .aerial #masthead {
   border-bottom: 2px dotted #e2b754;
 }
-.home em {
+.home .tab h3 {
+  color: #625081;
+}
+.about .tab h3 {
+  color: #a6c1dc;
+}
+.education .tab h3 {
+  color: #58937b;
+}
+.pop-up .tab h3 {
+  color: #C9BFCB;
+}
+.community .tab h3 {
+  color: #275b95;
+}
+.aerial .tab h3 {
+  color: #e2b754;
+}
+.home .logo em {
   color: #625081;
 }
 .about em {
@@ -342,12 +370,8 @@ em {
 .aerial em {
   color: #e2b754;
 }
-
-
-
-
 .tab, .event-excerpt, .other {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   border-bottom: 2px dotted #625081; 
 }
 .other {
@@ -355,14 +379,9 @@ em {
 }
 .tab img {
   /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); */ 
-  margin: 20px 0px 20px 0;
+  margin-bottom: 30px;
   padding-right: 0px;
 }
-.tab {
-  margin-top: 20px;
-}
-
-
 #view  {
   margin: 20px 0 -20px 0;
   float: right;
@@ -378,7 +397,6 @@ em {
   background: $tab_background;
   padding: 2px;
   margin: 5px 0;
-  font-size: 14px;
  }
 
 /* Social TABS */
