@@ -66,13 +66,12 @@ $event: #625081;
 $nav: #b1a8c0;
 
 /* universal */
-html { font-size:100%; } 
 html, body {
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: arial, helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: #575757;
 }
 
@@ -108,23 +107,17 @@ h1 {
   color: #948b96;
   letter-spacing: -1px;
 }
-h2 {
-  font-size: 30px;
-  line-height: 34px;
-  letter-spacing: -1px;
-  color: #948b96;
-  padding: 40px 0 0 0;
-}
+
 h3 {
-  font-size: 24px;
-  line-height: 30px;
-  font-style: bold;
+  font-size: 22px;
+  line-height: 22px;
   color: #948b96;
   margin: 30px 0 0 0;
+  font-weight: normal;
 }
 p {
     font-size: 16px;
-    line-height: 30px;
+    line-height: 24px;
 }
 a {
   text-decoration: none;
@@ -251,59 +244,68 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 #masthead {
   border-bottom: 2px dotted #625081; 
   position: relative;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #masthead img {
   height: 180px;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
 }
 #masthead div {
   position: absolute;
-  top:40px;
-  left:60px;
-  font-family: "Andale Mono", AndaleMono, monospace;
+  top:30px;
+  left:55px;
+}
+#aye {
+  padding-left: 5px;
 }
 .logo {
   font-style: normal;
   color: $tab_border;
 }
 .blurb {
-  font-size: 24px;
-  line-height: 36px; 
+  font-size: 22px;
+  line-height: 34px; 
   padding-bottom: 25px;
   border-bottom: 2px dotted #625081; 
-  margin-bottom: 40px;
+
 }  
 .blurb em {
   font-style: normal;
   font-weight: bold;
   color: #625081;
 }
+.home #masthead {
+  margin-bottom:0px;
+}
+#mobile_nav {
+  display: none;
+}
+
 #main_nav {
   position: fixed;
   right: 10%;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-#main_nav ul {
+#main_nav ul, #mobile_nav ul {
   background: $tab_background;  
 }
-#main_nav li {
+#main_nav li, #mobile_nav li {
   padding: 5px;
 }
-#main_nav li.selected {
+#main_nav li.selected, #mobile_nav li.selected {
   background-color: $tab;
 }
-#main_nav a {
+#main_nav a, #mobile_nav a {
   color: #948b96;
 }
-#main_nav li.selected, #main_nav li.selected a {
+#main_nav li.selected, #main_nav li.selected a,#mobile_nav li.selected, #mobile_nav li.selected a {
   color: white;
 }
-#main_nav li.selected:hover {
+#main_nav li.selected:hover, #mobile_nav li.selected:hover {
   background-color: $tab;
 }
-#main_nav li:hover {
+#main_nav li:hover, #mobile_nav li:hover {
   background-color: #e3e3e3;
 }
 
@@ -378,12 +380,17 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 .tab, .event-excerpt, .other {
   padding-bottom: 30px;
   border-bottom: 2px dotted #625081; 
+  margin-bottom: 10px;
+}
+.event-excerpt, .other {
+  padding-bottom: 40px;
 }
 .other {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 .tab img {
   /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); */ 
+  margin-top: 20px;
   margin-bottom: 30px;
   padding-right: 0px;
 }
@@ -456,7 +463,6 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 }
 .tabs {
   background-color: $tab_background;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);  
 }
 .js .tabs h3 {
   display: none;
@@ -482,7 +488,6 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 #magazine {
     background-color: $tab_background;  
     height: 266px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 #magazine img {
   height: 200px;
@@ -594,6 +599,7 @@ input {
 /* Container */
 #simplemodal-container {height:360px; width:600px; color:#948b96; background-color:#fff; border:4px solid #aaaaaa; padding:12px;}
 #simplemodal-container .simplemodal-data {padding:8px;}
+#simplemodal-container p { font-size: 14px; line-height: 18px;}
 #simplemodal-container a {color:#0088CC;}
 #simplemodal-container a.modalCloseImg {background:url(/assets/icons/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 
@@ -632,9 +638,6 @@ input {
     margin-top: 20px;
     width: 100%;
   }
-  #main_nav ul {
-    overflow: hidden;
-  } 
   #main_nav li {
     float: left;
     display: inline;
@@ -668,7 +671,10 @@ input {
   }
  .col-2-3 {
     width: 100%;
-  }  
+  }
+  #te, #be, #re, #le {
+    display: none;
+  } 
 } 
 @media (max-width: 600px) {
   .grid {
@@ -683,14 +689,15 @@ input {
   .other {
     display: none;
   }
-  #main_nav ul {
-    overflow: hidden;
-  } 
-  #main_nav li {
-    float: left;
-    display: inline;
+  #mobile_nav {
+    display: normal;
+    margin-top: 40px;
+   display: inline;
     width: 100%;
-  }  
+  }
+  #main_nav li {
+    display: none;
+  } 
 
 }
 @media (max-width: 400px) {
