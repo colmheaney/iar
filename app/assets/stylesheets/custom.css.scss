@@ -692,8 +692,11 @@ input {
   #mobile_nav {
     display: normal;
     margin-top: 40px;
-   display: inline;
+    display: inline;
     width: 100%;
+  }
+  .blurb {
+    margin-top: 0px;
   }
   #main_nav li {
     display: none;
