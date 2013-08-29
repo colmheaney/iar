@@ -416,14 +416,14 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 
 /* Summary Tabs */
 .summary img {
-  width: 90%;
+  width: 95%;
   margin-top: 20px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;   
 }
 .summary li:nth-child(even) p, .summary li:nth-child(even) a, .summary li:nth-child(even) h3 {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 
@@ -612,7 +612,7 @@ input {
 #basic-modal-content {display:none;}
 
 /* Overlay */
-#simplemodal-overlay {background-color:#000;}
+#simplemodal-overlay {background-color:#000; }
 
 /* Container */
 #simplemodal-container {height:360px; width:600px; color:#948b96; background-color:#fff; border:4px solid #aaaaaa; padding:12px;}

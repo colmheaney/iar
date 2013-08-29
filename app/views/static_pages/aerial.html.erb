@@ -5,22 +5,26 @@
 		
 	  	<section class="col-2-3 tab">
       		<p><a href="/contact">Contact us</a> for further details if you would like to hire this service.</p>
-			<img class="col-1-1" src="/assets/front_page/audleys.jpg">
-			<img class="col-1-1" src="/assets/front_page/inch-abbey-3.jpg">
-			<img class="col-1-1" src="/assets/front_page/grianan.jpg">
+      		<ul class="bxslider">
+      			<li><img class="col-1-1" src="/assets/front_page/audleys.jpg"></li>
+				<li><img class="col-1-1" src="/assets/front_page/inch-abbey-3.jpg"></li>
+				<li><img class="col-1-1" src="/assets/front_page/grianan.jpg"></li>
+				<li><img class="col-1-1" src="/assets/front_page/aerial-1.jpg"></li>
+				<li><img class="col-1-1" src="/assets/front_page/Clogher-Hillfort.jpg"></li>
+				<li><img class="col-1-1" src="/assets/front_page/McArts-Fort.jpg"></li>
+      		</ul>
 		</section><!-- /.tabpane -->
 	</div><!-- end of main content row -->
 
 	<div class="row">
-		<%= render 'events' %>
-	</div><!-- end of event row -->
-
-	<div class="row">
-		<%= render 'others' %>
 		<%= render 'mobile_nav' %>		
 	</div><!-- end of row 3 -->
 </div><!-- end of main -->
 
-<%= render 'social-script' %> 
+<%= render 'social-script' %>
 
-
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
+</script>
