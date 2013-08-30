@@ -450,10 +450,10 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 #tabHeadings a:hover  {
   text-decoration: none;
 }
-#tabHeadings li.selected a {
+#tabHeadings li.select a {
   color: white;
 }
-#tabHeadings li.selected, #tabHeadings li.selected:hover {
+#tabHeadings li.select, #tabHeadings li.select:hover {
   background: $tab;
 }
 #tabHeadings li:hover {
