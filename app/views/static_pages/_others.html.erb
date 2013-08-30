@@ -32,18 +32,17 @@
    		</section><!-- end of tabs -->
 	</section><!-- end of social section -->
 
-	<section class="col-1-2">
-	    <% @publication.each do |mag| %>
-	    <div id="magHeading">
-			<p>Digital Magazine</p>
-	    </div>
-		<div id="magazine">
-			<h3 id="find"><%= mag.title %> is out now!</h3>
-			<a href=<%= mag.file_url().to_s %>>		        
-	            <img src="/assets/front_page/frontcover.png">
-	            	<!-- image_tag mag.image_url(:thumb).to_s -->
+
+	<section class="col-1-2 magazine">
+		<% @publication.each do |mag| %>
+			<a href=<%= mag.file_url().to_s %>>
+				<div class="diag"></div>
+				<img src="/assets/front_page/frontcover.png">
+				<div class="announcement">
+					<p>IAR Magazine</p>
+					<p>Issue 4 is out now!</p>
+				</div>
 			</a>
-		</div><!-- end of mag section -->
 	    <% end %>
 	</section>
 </section><!-- end of col-2-3 -->
