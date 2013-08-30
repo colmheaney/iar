@@ -672,6 +672,7 @@ input {
   #header_nav, #main_nav, #headsocial {
     right: 15%;
   }
+
 }
 @media (max-width: 1024px) {
   .col-1-3 {
@@ -736,6 +737,24 @@ input {
   } 
 } 
 @media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  #masthead img {
+    height: 140px;
+  }
+  .blurb {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  h3 {
+    font-size: 20px;
+  }
   .grid {
     margin: 0 5%;
   }
