@@ -48,12 +48,10 @@ margin: 0 10%;
 [class*='col-']:last-of-type {
   padding-right: 0;
 }
-.grid-pad {
-  padding: 20px 0 20px 20px;
+.grid-no-pad {
+  padding: 0;
 }
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-}
+
 
 /* mixins, variables, etc. */
 
@@ -207,10 +205,13 @@ li {
 #header_nav ul {
   margin-top: 10px;
 }
-#header_nav li {
-  padding-right: 2px !important;
-  padding: 2px;
-  display: inline;
+#header_nav a {
+  display: inline-block;
+  height: 27px;
+  width: 31%;  
+}
+#header_nav a:last-child {
+  width: 34%;
 }
 #header_nav li.active {
   background: $tab_border;
@@ -245,10 +246,10 @@ li {
 #header_nav li {
   text-align: center;
 }
-#header_nav li a {
+#header_nav a li {
   color: #948b96;
 }
-#header_nav li.active a {
+#header_nav a li.active {
   color: white;
 }
 
@@ -349,7 +350,7 @@ li#fat-menu.dropdown > ul.dropdown-menu {
 #option5 { border-left: 4px solid #275b95; }
 #option6 { border-left: 4px solid #e2b754; }
 
-.home b, .downloads b, .events b, .contact b { background-color: #625081; }
+.home b, .downloads b, .events b, .contact b { background-color: #625081; z-index: 103;}
 .about b { background-color: #a6c1dc; }
 .education b { background-color: #58937b; }
 .pop-up b { background-color: #C9BFCB; }
@@ -455,10 +456,12 @@ li#fat-menu.dropdown > ul.dropdown-menu {
   -moz-border-radius: 7px;
   border-radius: 7px;   
 }
-.summary li:nth-child(even) p, .summary li:nth-child(even) a, .summary li:nth-child(even) h3 {
+.summary li:nth-child(even) p, .summary li:nth-child(even) a, .summary li:nth-child(even) h3, .aim p {
   margin-left: 5%;
 }
-
+.shared p, .shared h3 {
+   margin-left: 5%; 
+}
 
 
 
@@ -536,6 +539,7 @@ li#fat-menu.dropdown > ul.dropdown-menu {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   width: 50%;
   height: 266px;
+  z-index: 100;
 }
 
 .diag {
@@ -547,14 +551,14 @@ li#fat-menu.dropdown > ul.dropdown-menu {
     border-top: 170px solid transparent;
     border-right: 280px solid #b3b3b3;
     opacity: 0.8;
-    z-index: 100;
+    z-index: 101;
 }
 
 .announcement {
   position: absolute;
   bottom: 25px;
   right: 15px;
-  z-index: 101;
+  z-index: 102;
   text-align: right;
 }
 

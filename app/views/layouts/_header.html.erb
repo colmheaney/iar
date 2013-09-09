@@ -12,10 +12,11 @@
 	          		</ul>
 	        </li>
 	      	<% else %>
-	        <li class="col-1-3 <%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li> 
-	      	<% end %>               
-	      	<li class="col-1-3 <%= 'active' if current_page?(events_path) %>"><%= link_to "Events", events_path %></li>
-	      	<li class="col-1-3 <%= 'active' if current_page?(publications_path) %>"><%= link_to "Downloads", publications_path %></li> 
+	      	<a href="/"><li class=" <%= 'active' if current_page?(root_path) %>">Home</li></a>
+	      	<% end %> 
+	      	<a href="/events"><li class="<%= 'active' if current_page?(events_path) %>">Events</li></a> <a href="/downloads"><li class="<%= 'active' if current_page?(publications_path) %>">Downloads</li></a>             
+	      	
+	      	
 	  	</ul>	
 	</nav>
 
