@@ -20,6 +20,8 @@ test:
 
 production:
   adapter: postgresql
-  database: iar_development
+  database: myapp
   pool: 5
   timeout: 5000
+  username: colm
+  password: dWarv9esiar
