@@ -6,6 +6,7 @@ set :application, "iar"
 
 set :rvm_ruby_string, "2.0.0-p247"
 set :normalize_asset_timestamps, false
+set :rails_env, "production"
 set :repository, "git://github.com/colmheaney/iar.git"
 set :scm, :git
 set :scm_passphrase, ""
@@ -20,7 +21,7 @@ ssh_options[:port] = 3229
 default_run_options[:pty] = true
 
 after "deploy:restart", "deploy:cleanup"
-after "deploy", "rvm:trust_rvmrc"
+
  
 namespace :deploy do
   task :start do ; end
@@ -30,11 +31,7 @@ namespace :deploy do
   end
 end
 
-namespace :rvm do
-  task :trust_rvmrc do
-    run "rvm rvmrc trust #{release_path}"
-  end
-end
+
 
 
 
