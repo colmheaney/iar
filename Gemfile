@@ -1,4 +1,4 @@
-  source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.3.0.1'
@@ -11,6 +11,7 @@ gem 'carrierwave'
 gem 'active_attr'
 gem 'fog', '~> 1.3.1'
 gem 'ckeditor_rails'
+gem 'rvm-capistrano'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -3,8 +3,10 @@
 <div class="grid">
   <div class="row">
 
-    <%= form_for(@message) do |f| %>    
+    <%= form_for(@message, :remote => true) do |f| %>    
     <%= render 'shared/error_messages', object: f.object %>
+    
+    <div class="response"></div>
 
     <div class="col-2-3 form">
       <div>

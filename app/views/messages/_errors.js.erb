@@ -1,0 +1,4 @@
+<% @message.errors.each do |key, value| %>
+	<div class="alert alert-<%= key %>"><%= key %> <%= value %></div>
+<% end %>
+<%= yield %>

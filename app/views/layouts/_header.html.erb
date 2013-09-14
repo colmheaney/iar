@@ -54,10 +54,34 @@
   <p>8am-4pm, Monday-Friday</p>
   <p>Phone: 02890501769</p>
   <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
+
+    <%= form_for(@message, :remote => true) do |f| %>    
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <div class="response"></div>
+
+    <div class="col-2-3 form">
+      <div>
+        <div class="col-1-2">
+          <%= f.text_field :name, :placeholder => 'Name' %>
+        </div>
+        <div class="col-1-2">
+          <%= f.text_field :email,  :placeholder => 'Email'  %>
+        </div>
+        <div class="col-1-1">
+          <%= f.text_area :content, :rows => 5, :placeholder => 'Message'  %>
+        </div>
+        <div class="col-1-8"><%= f.submit "Send", :class => 'pointer'  %>
+        </div>          
+      </div>
+    </div>
+    <% end %>
+
 </section> 
 
 <!-- preload the images -->
 <div style='display:none'>
   <img src='/assets/icons/x.png' alt='' />
 </div> 
+
 </header>

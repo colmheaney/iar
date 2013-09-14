@@ -1,0 +1,5 @@
+<% if @message.errors.count > 0 %> 
+  $('.response').html("<%= escape_javascript(render 'errors')%>"); 
+<% else %>
+  $('.response').append("Message sent! Thank you for contacting us.");  
+<% end %>

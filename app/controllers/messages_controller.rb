@@ -6,11 +6,15 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
-    if @message.valid?
-      ContactMailer.user_contact(@message).deliver
-      redirect_to root_url, notice: "Message sent! Thank you for contacting us."
-    else
-      render "new"
+      respond_to do |format|
+      if @message.valid?
+        ContactMailer.user_contact(@message).deliver
+        format.html { redirect_to(root_url, :notice => 'Message sent! Thank you for contacting us.') }  
+        format.js 
+      else
+        # render "new"
+        format.js 
+      end
     end
   end
   
