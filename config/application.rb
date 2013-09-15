@@ -23,7 +23,7 @@ module Iar
       :port                 => 587,
       :domain               => "iar.com",
       :user_name            => "colm.heaney",
-      :password             => "dWarv9ggs",
+      :password             => "",
       :authentication       => "plain",
       :enable_starttls_auto => true
     }
