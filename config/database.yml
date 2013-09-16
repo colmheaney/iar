@@ -23,5 +23,5 @@ production:
   database: myapp
   pool: 5
   timeout: 5000
-  username: colm
-  password: dWarv9esiar
+  username: ENV["DB_USER"]
+  password: ENV["DB_PWD"]

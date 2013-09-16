@@ -22,8 +22,8 @@ module Iar
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "iar.com",
-      :user_name            => "colm.heaney",
-      :password             => "",
+      :user_name            => ENV["GMAIL_USERNAME"],
+      :password             => ENV["GMAIL_PASSWORD"],
       :authentication       => "plain",
       :enable_starttls_auto => true
     }

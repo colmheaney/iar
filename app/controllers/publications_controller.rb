@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
     before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
+	before_filter :common_content, only: [:index, :new, :create, :edit]
 
     def new
     	@publication = Publication.new

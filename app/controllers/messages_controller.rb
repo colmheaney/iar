@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       respond_to do |format|
       if @message.valid?
         ContactMailer.user_contact(@message).deliver
-        format.html { redirect_to(root_url, :notice => 'Message sent! Thank you for contacting us.') }  
+        # format.html { redirect_to(root_url, :notice => 'Message sent! Thank you for contacting us.') }  
         format.js 
       else
         # render "new"

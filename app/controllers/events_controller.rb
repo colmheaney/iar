@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
 	before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
+	before_filter :common_content, only: [:index, :new, :create, :edit]
 	
 	def index
     	@upcoming_events = Event.order('date ASC').where('date >= ?', Date.today).where('news = ?', 0)	
       	@past_events 	 = Event.order('date DESC').where('date < ?', Date.today).where('news = ?', 0)	
       	@news_events	 = Event.by_news #if params[:type].present? 
-
  	end
 
 	def new
