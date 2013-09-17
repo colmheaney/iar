@@ -16,4 +16,4 @@
 /public/uploads
 /config/setup_mail.rb
 /config/carrierwave.rb
-
+/config/deploy.rb
