@@ -12,9 +12,9 @@ class PublicationsController < ApplicationController
 
     def index
   	  #@publications = Publication.paginate(page: params[:page], per_page: 5)
-      @magazines = Publication.where('pubtype = ?', 'Magazines')
-      @leaflets = Publication.where('pubtype = ?', 'Leaflets')
-      @papers = Publication.where('pubtype = ?', 'Papers')          
+      @magazine_publications = Publication.where('pubtype = ?', 'Magazines')
+      @leaflet_publications = Publication.where('pubtype = ?', 'Leaflets')
+      @paper_publications = Publication.where('pubtype = ?', 'Papers')          
     end
 
   	def create
@@ -43,13 +43,13 @@ class PublicationsController < ApplicationController
 	    redirect_to publications_path				
 	end	
 
-	def download
-		@publication = Publication.find(params[:id])		
-		uploader = @publication.file 
-		uploader.retrieve_from_store!(File.basename(uploader.url))
-		uploader.cache_stored_file!
+	# def download
+	# 	@publication = Publication.find(params[:id])		
+	# 	uploader = @publication.image
+	# 	uploader.retrieve_from_store!(File.basename(uploader.url))
+	# 	uploader.cache_stored_file!
 		 
-		send_file uploader.file.path
-	end
+	# 	send_file uploader.file.path
+	# end
 
 end

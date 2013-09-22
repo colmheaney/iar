@@ -1,10 +1,11 @@
 <li class="row">
-    <a href=<%= publication.image_url().to_s %>><%= image_tag publication.image_url(:thumb).to_s %></a>
+    <a href=<%= publication.file_url().to_s %>><%= image_tag publication.image_url(:thumb).to_s %></a>
     <div class="info col-1-2">
         <h3><%= publication.title %></h3>
         <p><%= publication.description %></p>
     
-        <p><%= link_to "view", publication.image_url.to_s %>
+        <p><%= link_to "download", download_publication_path(publication) %>
+        | <%= link_to "view", publication.file_url.to_s %>
         <% if signed_in? %>
         | <%= link_to "delete", publication, method: :delete, data: { confirm: "You sure?" } %>     
         | <%= link_to "edit", edit_publication_path(publication) %> </p>

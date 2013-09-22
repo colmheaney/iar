@@ -3,21 +3,13 @@
 
 	<nav id="header_nav" class="col-1-5">
 		<ul>
-	        <% if signed_in? %>
-	        <li id="fat-menu" class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-	           		<ul class="dropdown-menu white-nav">
-	        			<li><%= link_to "Home", root_path %></li>
-	            		<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-	          		</ul>
-	        </li>
-	      	<% else %>
 	      	<a href="/"><li class=" <%= 'active' if current_page?(root_path) %>">Home</li></a>
-	      	<% end %> 
 	      	<a href="/events"><li class="<%= 'active' if current_page?(events_path) %>">Events</li></a> <a href="/downloads"><li class="<%= 'active' if current_page?(publications_path) %>">Downloads</li></a>             
-	      	
-	      	
 	  	</ul>	
+        <% if signed_in? %>
+   		<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+      	<% end %> 
+
 	</nav>
 
 	<div id="headsocial" class="col-1-5">
@@ -46,21 +38,23 @@
 	</a>
 
 <section id="basic-modal-content">
-  <p>Irish Archaelogical Research</p>
-  <p>47 Olympia Drive</p>
-  <p>Belfast</p>
-  <p>BT12 6NG</p>
-  <br />
-  <p>8am-4pm, Monday-Friday</p>
-  <p>Phone: 02890501769</p>
-  <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
+  <div class="col-1-2">
+    <p>Irish Archaelogical Research</p>
+    <p>47 Olympia Drive</p>
+    <p>Belfast</p>
+    <p>BT12 6NG</p>
+    <br />
+    <p>8am-4pm, Monday-Friday</p>
+    <p>Phone: 02890501769</p>
+    <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
+  </div>
 
     <%= form_for(@message, :remote => true) do |f| %>    
     <%= render 'shared/error_messages', object: f.object %>
     
     <div class="response"></div>
 
-    <div class="col-2-3 form">
+    <div class="col-1-2 form">
       <div>
         <div class="col-1-2">
           <%= f.text_field :name, :placeholder => 'Name' %>

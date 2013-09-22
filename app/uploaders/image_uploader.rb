@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+  # storage :fog
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -36,9 +36,22 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  # version :thumb do
+  #   process :resize_to_limit => [200, 284]
+  # end
+
+  def cover 
+    manipulate! do |frame, index|
+      frame if index.zero? 
+    end
+  end  
+
+  # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_limit => [200, 284]
-  end
+    process :cover  
+    process :resize_to_limit => [400, 566] 
+    process :convert => 'png'
+  end  
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

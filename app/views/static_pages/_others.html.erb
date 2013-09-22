@@ -35,9 +35,9 @@
 
 	<section class="col-1-2 magazine">
 		<% @publication.each do |mag| %>
-			<a href=<%= mag.file_url().to_s %>>
+			<a href=<%= mag.image_url().to_s %>>
 				<div class="diag"></div>
-				<img src="/assets/front_page/frontcover.png">
+				<img src=<%= mag.image_url(:thumb).to_s%>>
 				<div class="announcement">
 					<p>IAR Magazine</p>
 					<p>Issue 4 is out now!</p>
