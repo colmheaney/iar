@@ -678,9 +678,17 @@ input {
   height: auto !important;
 }
 
+.response {
+  color: red;
+}
+
 .form {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 0;
+}
+.form span {
+  display: inline-block;
+  color: red;
 }
 .pointer {
   cursor: pointer;
