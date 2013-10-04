@@ -640,10 +640,8 @@ select.date-select, #publication_pubtype {
 /* footer */
 
 footer {
-  margin-top: 50px;
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-bottom: 15px;
+
+  margin-bottom: 15px !important;
 }
 
 footer a {
@@ -652,6 +650,12 @@ footer a {
     &:hover {
       text-decoration: underline;     
     } 
+}
+footer .contact{
+
+  text-align: right;
+  padding:0;
+
 }
 
 /* miscellaneous */
