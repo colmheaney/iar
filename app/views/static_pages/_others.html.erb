@@ -1,6 +1,7 @@
 <section class="col-2-3 other">
 	<section class="col-1-2">
 
+
 	    <ul id="tabHeadings">
 	        <li class="select twitter_icon col-1-2">
 	           	<a href=".twitter">
@@ -34,15 +35,13 @@
    		</section><!-- end of tabs -->
 	</section><!-- end of social section -->
 
-
 	<section class="col-1-2 magazine">
 		<% @publication.each do |mag| %>
 			<a href=<%= mag.image_url().to_s %>>
 				<div class="diag"></div>
 				<img src="/assets/magazines/Issue_5_thumb.jpg">
 				<div class="announcement">
-					<p>IAR Magazine</p>
-					<p>Issue 5 is out now!</p>
+					<p>IAR Magazine - Issue 5 is out now!</p>
 				</div>
 			</a>
 	    <% end %>

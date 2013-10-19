@@ -6,7 +6,10 @@
 	<p class="meta">
 		<%= event_excerpt.date.strftime(" %d %B %Y") %> / <%= event_excerpt.location %>
 	</p>
-	<p class="body"><%= raw event_excerpt.description.truncate(200, :separator => ' ', :omission => "...#{link_to " (read more)", events_path.to_s + "/#" + event_excerpt.id.to_s}") %></p>	
+	<p class="body"><%= event_excerpt.summary %></p>
+
+	<p><a href=/events/#<%= event_excerpt.id %>>Read more...</a></p>
+
 	<span class="timestamp">Posted <%= time_ago_in_words(event_excerpt.created_at) %> ago.</span>
 </li>
 
