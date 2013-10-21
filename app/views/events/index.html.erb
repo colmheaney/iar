@@ -5,9 +5,9 @@
 
         <nav id="main_nav" class="col-1-5">
             <ul>
-                <li class="selected" id="option1"><a href="#tab1">Upcoming Events</a></li>
-                <li id="option2"><a href="#tab2">Past Events</a></li>
-                <li id="option3"><a href="#tab3">News</a></li>
+                <li class="selected"><a href="#tab1">Upcoming Events</a></li>
+                <li><a href="#tab2">Past Events</a></li>
+                <li><a href="#tab3">News</a></li>
             </ul>
             <% if signed_in? %>
             <p><%= link_to "Add new event", new_event_path %></p>
@@ -47,12 +47,6 @@
           $('.selected').removeClass('selected');
           li = $('a[href=#'+tab+']').parent();
           li.addClass('selected');
-          color = li.css('border-left-color');
-          $('b').css("background", color);
-          $('#header_nav li.active').css("background", color);
-          $('.tab, .event-excerpt, .event > div > li, .other, #masthead').css("border-bottom-color", color);
-          $('#tabHeadings .selected, #magHeading').css("border-left-color", color);
-          $('em').css("color", color);
         }  
         else {
             $('.tab').hide();

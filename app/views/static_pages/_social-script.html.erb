@@ -2,51 +2,51 @@
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 $(document).ready(function() {
-	color = $('#te').css('background-color');
-	$('#header_nav li:first').css("background", color).addClass('active');
+        color = $('#te').css('background-color');
+        $('#header_nav li:first').css("background", color).addClass('active');
 
-	$('.selected').removeClass('selected');
-	li = $('li[name="'+ window.location.pathname +'"]');
-	li.addClass('selected');
+        $('.selected').removeClass('selected');
+        li = $('li[name="'+ window.location.pathname +'"]');
+        li.addClass('selected');
 
 });
 
 var Social = {
-	init : function() {
-		this.social();
-	},
+        init : function() {
+                this.social();
+        },
 
 
-	social : function() {
-		var tabs = $('.tabs'),
-			lis = tabs.find('li'),
-			tabHeadings = $('#tabHeadings');
+        social : function() {
+                var tabs = $('.tabs'),
+                        lis = tabs.find('li'),
+                        tabHeadings = $('#tabHeadings');
 
-		// listen for heading clicks
-		tabHeadings
-			.delegate('li', 'click', function(e) {
-				var li = $(this),
-					hash;
-			
-				// change the selected class to the selected one
-				li
-					.siblings()
-						.removeClass('select')
-						.end()
-						.addClass('select');
-					
-				// grab the hash of the anchor
-				hash = li.children('a').attr('href');
+                // listen for heading clicks
+                tabHeadings
+                        .delegate('li', 'click', function(e) {
+                                var li = $(this),
+                                        hash;
+                        
+                                // change the selected class to the selected one
+                                li
+                                        .siblings()
+                                                .removeClass('select')
+                                                .end()
+                                                .addClass('select');
+                                        
+                                // grab the hash of the anchor
+                                hash = li.children('a').attr('href');
 
-				// show corresponding section
-				lis
-					.hide()
-					.filter(hash)
-						.fadeIn(500);
-						
-				e.preventDefault();
-			});
-		}
-	}
+                                // show corresponding section
+                                lis
+                                        .hide()
+                                        .filter(hash)
+                                                .fadeIn(500);
+                                                
+                                e.preventDefault();
+                        });
+                }
+        }
 Social.init();
 </script>

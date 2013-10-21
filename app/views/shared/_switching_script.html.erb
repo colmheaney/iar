@@ -19,16 +19,8 @@ var Site = {
 			.siblings()
 				.removeClass('selected')
 				.end()
-				.addClass('selected');
+				.addClass('selected');       
 
-		//b = $('b').removeClass().addClass(li.attr('name'));
-		color = li.css('border-left-color');
-		$('b').css("background", color);
-		$('#header_nav li.active').css("background", color);
-		$('.tab, .event-excerpt, .event > div > li, .other, #masthead').css("border-bottom-color", color);
-    $('.tab h3').css("color", color);
-		$('#tabHeadings .selected, #magHeading').css("border-left-color", color);
-		$('em').css("color", color);
           
       hash = li.children('a').attr('href');
       tab.hide().filter(hash).show();
