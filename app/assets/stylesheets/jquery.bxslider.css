@@ -24,6 +24,7 @@
 .bx-wrapper img {
 	max-width: 100%;
 	display: block;
+	
 }
 
 /** THEME
@@ -32,6 +33,10 @@
 .bx-wrapper .bx-viewport {
 	left: -5px;
 	background: #fff;
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	
 }
 
 .bx-wrapper .bx-pager,
@@ -118,7 +123,6 @@
 	width: 32px;
 	height: 32px;
 	text-indent: -9999px;
-	z-index: 9999;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {
