@@ -1,7 +1,6 @@
 <script> document.documentElement.className = 'js'; </script>
 
-<div class="masthead">
-
+<div id="masthead">
   <a href="/">
       <div id="masthead-logo" class="col-1-5">
         <img src="/assets/logo_1.png">
@@ -10,7 +9,6 @@
           <h1>Archaeological</h1>
           <h1>Research</h1> 
         </div>
-      <!-- <p>Bringing our local heritage to the world</p> -->
     </div>
   </a>
  
@@ -24,14 +22,11 @@
    		<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
       	<% end %> 
   </nav>
-
 </div>
-
-
 
 <header class="grid">
 
-  <div style="margin-top: 40px;"></div>
+  <div class="marginTop40"></div>
 
 	<div id="headsocial" class="col-1-5">
 		<h3 id="find">Find us on:</h3>
@@ -41,24 +36,22 @@
         <a href="https://twitter.com/IAR1">
             <img src="/assets/icons/twitter_grey.png" alt="twitter" />
         </a>
-		<div id='basic-modal' style="display: inline;">
-		  <a href='/contact' class='basic'><img src="/assets/icons/email.png" alt="contact-us" /></a>
-		</div>               
+    		<div id='basic-modal' style="display: inline;">
+    		  <a href='/contact' class='basic'><img src="/assets/icons/email.png" alt="contact-us" /></a>
+    		</div>               
 	</div> 
 
-
-
-<section id="basic-modal-content">
-  <div class="col-1-2">
-    <p>Irish Archaelogical Research</p>
-    <p>47 Olympia Drive</p>
-    <p>Belfast</p>
-    <p>BT12 6NG</p>
-    <br />
-    <p>8am-4pm, Monday-Friday</p>
-    <p>Phone: 02890501769</p>
-    <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
-  </div>
+  <section id="basic-modal-content">
+    <div class="col-1-2">
+      <p>Irish Archaelogical Research</p>
+      <p>47 Olympia Drive</p>
+      <p>Belfast</p>
+      <p>BT12 6NG</p>
+      <br />
+      <p>8am-4pm, Monday-Friday</p>
+      <p>Phone: 02890501769</p>
+      <p><a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a></p> 
+    </div>
 
 <!--     <%= form_for(@message, :remote => true) do |f| %>    
     <%= render 'shared/error_messages', object: f.object %>
@@ -82,7 +75,7 @@
     </div>
     <% end %> -->
 
-</section> 
+  </section> 
 
 <!-- preload the images -->
 <div style='display:none'>

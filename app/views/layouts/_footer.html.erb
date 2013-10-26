@@ -1,5 +1,18 @@
 <footer class="grid">
   <div class="row contact col-2-3">
+  
+    <div id="footersocial">
+          <a href="https://www.facebook.com/IrishArchaeologicalResearch">
+              <img src="/assets/icons/facebook_grey.png" alt="facebook" />
+          </a>
+          <a href="https://twitter.com/IAR1">
+              <img src="/assets/icons/twitter_grey.png" alt="twitter" />
+          </a>
+          <div id='basic-modal'>
+            <a href='/contact' class='basic'><img src="/assets/icons/email.png" alt="contact-us" /></a>
+          </div>               
+    </div>   
+    
     <small>
       Irish Archaelogical Research, 
       47 Olympia Drive,
@@ -8,6 +21,7 @@
       email: <a href="mailto:info@irisharchaeologicalresearch.com">info@irisharchaeologicalresearch.com</a>
     </small>  
   </div> 
+
 </footer>
 
 
@@ -15,13 +29,9 @@
 
 <script type="text/javascript">
 jQuery(function ($) {
-  // Load dialog on page load
-  //$('#basic-modal-content').modal();
-
   // Load dialog on click
   $('#basic-modal .basic').click(function (e) {
     $('#basic-modal-content').modal();
-
     return false;
   });
 });

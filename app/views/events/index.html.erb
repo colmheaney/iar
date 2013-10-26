@@ -1,9 +1,20 @@
 <%= provide(:title, 'News/Events') %>
 
 <div class="grid">
-	<div class="row">
+    <div class="row">
 
-        <nav id="main_nav" class="col-1-5">
+        <nav id="mobile_nav" class="col-1-5 nav" style="margin-top: 0px;">
+            <ul>
+                <li class="selected"><a href="#tab1">Upcoming Events</a></li>
+                <li><a href="#tab2">Past Events</a></li>
+                <li><a href="#tab3">News</a></li>
+            </ul>
+            <% if signed_in? %>
+            <p><%= link_to "Add new event", new_event_path %></p>
+            <% end %> 
+        </nav>   
+        
+        <nav id="main_nav" class="col-1-5 nav">
             <ul>
                 <li class="selected"><a href="#tab1">Upcoming Events</a></li>
                 <li><a href="#tab2">Past Events</a></li>
@@ -13,8 +24,9 @@
             <p><%= link_to "Add new event", new_event_path %></p>
             <% end %> 
         </nav>
+
          
-        <section class="tabpane col-2-3 event">
+        <section class="tabpane col-2-3">
             <div id="tab1" class="tab">
                 <% if @upcoming_events.blank? %>
                     <p>There are no upcoming events</p>
@@ -30,7 +42,7 @@
             <div id="tab3" class="tab">
                 <%= render @news_events %>
             </div>
-           
+
         </section>
     </div>
 </div>
