@@ -326,11 +326,12 @@ input { height: auto !important;}
   #header_nav { right: 0%; }
   #main_nav, #headsocial { display: none; }   
   #mobile_nav { display: normal; margin: 40px 0 20px 0; display: inline; width: 100%; padding-right: 0}  
-  #footersocial { display: normal; display: inline; float: left; border: none; text-align: left;}
+  #footersocial { display: normal; display: inline; float: left; border: none; text-align: left; margin-top: 5px;}
   #footersocial div { border: none; display: inline; }
-  #footersocial img { width: 15%; }
+  #footersocial img { width: 30%; }
   footer small { font-size: 11px; }
   h3 { font-size: 16px; line-height: 16px}
+  h3.home { font-size: 14px; line-height: 14px; }
   .marginTop40 { margin-top: 20px; }
 } 
 @media (max-width: 600px) {
@@ -342,13 +343,13 @@ input { height: auto !important;}
   #header_nav a { width: 28%; }  
   #masthead-logo { width: 100%; left: 5%; }  
   .other { display: none; }
-  footer small { font-size: 9px; }
+  footer small { font-size: 8px; }
   .event-excerpt ul > li { margin-bottom: 15px;}
   .download img { width: 100%; margin: 0px;}
   .download div { margin: 10px; }
 }
 @media (max-width: 435px) {
-  footer small { font-size: 8px; }
+  footer small { font-size: 7px; }
 }
 
 
