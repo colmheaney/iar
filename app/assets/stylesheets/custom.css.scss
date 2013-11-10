@@ -21,10 +21,10 @@
 /**VARIABLES
 ===================================*/
 $home:#625081;
-$about: #a6c1dc; 
+$about: #658092; 
 $education: #58937b;
-$pop-up: #E07519;
-$community: #0099CC;
+$pop-up: #ce5043;
+$community: #437cce;
 $aerial: #e2b754;
 $nav_background: #eeeeee;
 $selected: #aaaaaa; 
@@ -97,10 +97,10 @@ li { list-style: none; font-size: 16px; line-height: 1.7em; }
 .home #header_nav li.active, .home #header_nav li:not(.active):hover { background-color: #6e5a91; }
 .events #header_nav li.active, .events #header_nav li:not(.active):hover { background-color: #6e5a91; }
 .downloads #header_nav li.active, .downloads #header_nav li:not(.active):hover { background-color: #6e5a91; }
-.about #header_nav li.active, .about #header_nav li:not(.active):hover { background-color: #b8cee3; }
+.about #header_nav li.active, .about #header_nav li:not(.active):hover { background-color: #738d9e; }
 .education #header_nav li.active, .education #header_nav li:not(.active):hover { background-color: #63a288; }
-.pop-up #header_nav li.active, .pop-up #header_nav li:not(.active):hover { background-color: #e7822b; }
-.community #header_nav li.active, .community #header_nav li:not(.active):hover { background-color: #00aacc  ; }
+.pop-up #header_nav li.active, .pop-up #header_nav li:not(.active):hover { background-color: #d36357; }
+.community #header_nav li.active, .community #header_nav li:not(.active):hover { background-color: #578ad3 ; }
 .aerial #header_nav li.active, .aerial #header_nav li:not(.active):hover { background-color: #e6c06a; }
 
 
@@ -217,7 +217,7 @@ footer .contact{ text-align: right; padding:0;}
 .relativeImg { position: relative; }
 .relativeImg p, .relativeImg div a { padding: 7px;  background-color: #eee; width: 95%; margin-top:-8px;}
 .relativeImg div a {display: block; margin: -16px 0 30px 0;}
-.relativeImg h3 { position: absolute; top: 15px; left: -7px; color: #ffffff; padding: 5px 7px 7px 5px;}
+.relativeImg h3 { position: absolute; top: 15px; left: 0px; color: #ffffff; padding: 5px 7px 7px 5px;}
 .relativeImg h3.home { top: -60px; }
 
 .relativeImg .home { background-color: $home; }

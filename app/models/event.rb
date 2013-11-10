@@ -6,5 +6,5 @@ class Event < ActiveRecord::Base
     validates :summary, presence: true, length: {maximum: 150}
     validates :description, presence: true
 	
-	scope :by_news, lambda { where(['news = ?', 1]) }
+	scope :by_news, lambda { where(['news = ?', 1]).order('date DESC') }
 end

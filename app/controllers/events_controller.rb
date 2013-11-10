@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 	def index
     	@upcoming_events = Event.order('date ASC').where('date >= ?', Date.today).where('news = ?', 0)	
       	@past_events 	 = Event.order('date DESC').where('date < ?', Date.today).where('news = ?', 0)	
-      	@news_events	 = Event.by_news #if params[:type].present? 
+      	@news_events	 = Event.by_news() #if params[:type].present? 
  	end
 
 	def new
